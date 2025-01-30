@@ -1,0 +1,48 @@
+.section {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	margin-left: -5vh;
+}
+
+.section::before,
+.section::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: left;
+	z-index: -1;
+	transition: opacity 0.8s ease;
+}
+
+/* Fundo padrão */
+.section::before {
+	background: linear-gradient(
+			rgba(53, 53, 187, 0.882),
+			rgba(53, 53, 187, 0.442)
+		),
+		url("../../public/slimmindlogo.png");
+	opacity: 1;
+}
+
+/* Fundo alternativo "oculto" por padrão */
+.section::after {
+	background: linear-gradient(
+			rgba(53, 53, 187, 0.442),
+			rgba(53, 53, 187, 0.882)
+		),
+		url("../../public/slimmindlogo.png");
+	opacity: 0;
+}
+
+/* Ao adicionar --inverted, o pseudo-elemento ::before desaparece e ::after aparece */
+.section--inverted::before {
+	opacity: 0;
+}
+
+.section--inverted::after {
+	opacity: 1;
+}

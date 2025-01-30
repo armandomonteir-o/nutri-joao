@@ -1,9 +1,8 @@
 .videocontainer {
 	background-color: rgb(40, 43, 43);
-	width: 85%;
+	width: auto;
 	justify-self: center;
-	height: 40vh;
-	margin-top: 2vh;
+	height: auto;
 }
 .container {
 	width: 40%;
@@ -90,7 +89,7 @@
 .teste button:hover {
 	transition-duration: 300ms;
 	transition-timing-function: ease-in-out;
-	background-color: rgb(53, 53, 187);
+	background-color: rgb(6, 6, 63);
 	color: rgb(207, 207, 223);
 	transform: scale(1.1);
 }
@@ -103,6 +102,6 @@
 			rgba(53, 53, 187, 0.882),
 			rgba(53, 53, 187, 0.442)
 		),
-		url("../../public/slimmindlogo.png");
+		url("../../../public/slimmindlogo.png");
 	background-position: center;
 }

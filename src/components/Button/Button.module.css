@@ -1,0 +1,47 @@
+.button {
+	padding: var(--button-padding);
+	font-size: var(--button-font-size);
+	border-radius: var(--button-border-radius);
+	font-family: "Abud", Sans-serif;
+	border: none;
+	cursor: pointer;
+	transition: var(--button-transition);
+	transform: scale(1);
+	margin-top: 4px;
+}
+
+.button:hover {
+	transform: scale(1.1);
+	background-color: var(--hover-bg);
+	color: var(--hover-text-color);
+}
+
+.button.primary {
+	background-color: var(--primary-bg);
+	color: var(--text-color);
+	width: 30vh;
+	font-weight: 100;
+}
+
+.button.secondary {
+	background-color: var(--primary-bg);
+	color: var(--text-color);
+	width: 30vh;
+	font-weight: 100;
+	align-self: flex-end;
+	justify-self: flex-end;
+}
+
+.button.thirdary {
+	padding: 2.4vh;
+	background-color: var(--secondary-bg);
+	color: rgb(53, 53, 187);
+	width: 40vh;
+	font-weight: 700;
+	margin-bottom: 2vh;
+}
+
+.button.thirdary:hover {
+	background-color: var(--hover-bg);
+	color: var(--secondary-bg);
+}

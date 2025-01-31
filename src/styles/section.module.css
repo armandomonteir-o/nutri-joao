@@ -4,7 +4,8 @@
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	margin-left: -5vh;
+	scroll-snap-align: start;
+	overflow: hidden;
 }
 
 .section::before,
@@ -15,7 +16,8 @@
 	background-size: cover;
 	background-position: left;
 	z-index: -1;
-	transition: opacity 0.8s ease;
+	transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: opacity; /* Otimiza a renderização */
 }
 
 /* Fundo padrão */
@@ -28,7 +30,7 @@
 	opacity: 1;
 }
 
-/* Fundo alternativo "oculto" por padrão */
+/* Fundo alternativo  */
 .section::after {
 	background: linear-gradient(
 			rgba(53, 53, 187, 0.442),
@@ -38,11 +40,12 @@
 	opacity: 0;
 }
 
-/* Ao adicionar --inverted, o pseudo-elemento ::before desaparece e ::after aparece */
 .section--inverted::before {
 	opacity: 0;
+	transition-timing-function: ease-in;
 }
 
 .section--inverted::after {
 	opacity: 1;
+	transition-timing-function: ease-out;
 }

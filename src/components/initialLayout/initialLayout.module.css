@@ -39,7 +39,7 @@
 	line-height: 35px;
 	padding: 5px;
 	letter-spacing: -0.1px;
-	color: hsl(236, 18%, 84%);
+	color: var(--secondary-bg)
 }
 
 @media screen and (max-width: 768px) {
@@ -59,7 +59,7 @@
 	padding: 10px;
 	line-height: 25px;
 	letter-spacing: -0.1px;
-	color: #cfd0de;
+	color: var(--secondary-bg);
 	width: 70%;
 	text-align: center;
 	margin-top: 1vh;
@@ -71,7 +71,7 @@
 	font-weight: 700;
 	justify-self: center;
 	line-height: 10px;
-	color: #cfd0de;
+	color: var(--secondary-bg);
 }
 
 .section {

@@ -1,4 +1,3 @@
-/* Estilo do Container */
 .container {
 	display: flex;
 	flex-direction: column;
@@ -8,21 +7,20 @@
 	gap: 90px;
 }
 
-/* Estilo dos Cards */
 .card {
 	display: flex;
 	flex-direction: column;
 	width: 70%;
 	min-height: 60vh;
-	background: rgb(207, 207, 223, 0.9);
+	background: var(--secondary-bg);
 	padding: 30px;
 	border-radius: 12px;
-	box-shadow: 0 8px 1000px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 	position: relative;
 	opacity: 0;
 	transform: translateX(100px) rotate(-5deg) scale(0.9);
-	transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-		transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, opacity;
 }
 
 .card.right {
@@ -40,7 +38,15 @@
 
 .card.visible {
 	opacity: 1;
-	transform: translateX(0) rotate(0deg) scale(1);
+	transform: translateX(0) rotate(0) scale(1);
+	animation: float 2s ease-in-out infinite;
+	animation-delay: 0.5s;
+}
+
+@keyframes float {
+	50% {
+		transform: translateY(5px);
+	}
 }
 
 .card h2 {
@@ -48,9 +54,9 @@
 	font-size: 33px;
 	font-weight: 900;
 	line-height: 30px;
-	color: #3c47ba;
+	color: var(--primary-bg);
 	text-align: center;
-	margin-bottom: 30px; /* Espaçamento entre o título e o conteúdo */
+	margin-bottom: 30px; 
 }
 
 .contentWrapper {
@@ -64,7 +70,7 @@
 	font-family: "Abud", Sans-serif;
 	font-size: 21px;
 	line-height: 30px;
-	color: #3c47ba;
+	color: var(--primary-bg);
 	text-align: left;
 	flex: 1;
 	max-width: 80%;

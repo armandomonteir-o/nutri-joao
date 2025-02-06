@@ -80,6 +80,7 @@ export default function SecondLayout() {
 							height={350}
 							style={{
 								borderRadius: "12px",
+								marginLeft: "2rem",
 							}}
 						/>
 						<p>

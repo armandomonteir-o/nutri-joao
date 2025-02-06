@@ -35,7 +35,7 @@
 .button.thirdary {
 	padding: 2.4vh;
 	background-color: var(--secondary-bg);
-	color: rgb(53, 53, 187);
+	color: var(--primary-bg);
 	width: 40vh;
 	font-weight: 700;
 	margin-bottom: 2vh;

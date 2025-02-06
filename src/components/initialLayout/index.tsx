@@ -38,7 +38,7 @@ export default function initialLayout() {
 							}}
 						></Video>
 					</div>
-					<div className={styles.teste}>
+					<div className={styles.buttonWrapper}>
 						<Button variant="thirdary" onClick={handleClick}>
 							Quero consultar
 						</Button>

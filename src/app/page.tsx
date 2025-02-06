@@ -52,22 +52,12 @@ export default function Home() {
 			>
 				<SecondLayout />
 			</div>
-
 			{/* ThirdLayout */}
 			<div
 				ref={(el) => {
 					if (el) sectionsRef.current[2] = el
 				}}
-				className={`${sectionStyles.section}`}
-			>
-				<ThirdLayout />
-			</div>
-
-			<div
-				ref={(el) => {
-					if (el) sectionsRef.current[3] = el
-				}}
-				className={`${sectionStyles.section} ${sectionStyles["section--inverted"]}`}
+				className={`${sectionStyles.section} ${sectionStyles["third-layout-section"]}`}
 			>
 				<ThirdLayout />
 			</div>

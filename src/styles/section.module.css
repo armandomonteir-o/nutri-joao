@@ -6,6 +6,8 @@
 	overflow: hidden;
 	scroll-snap-align: start;
 	overflow: hidden;
+	min-width: 100vw;
+	margin-left: -6vh;
 }
 
 .section::before,
@@ -48,4 +50,6 @@
 .section--inverted::after {
 	opacity: 1;
 	transition-timing-function: ease-out;
+	height: calc(100% + 20px);
+	top: -20px;
 }

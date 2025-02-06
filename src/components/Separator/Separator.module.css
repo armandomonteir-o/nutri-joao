@@ -1,0 +1,77 @@
+.separator {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo {
+	flex: 1;
+	max-width: 75px;
+	height: auto;
+	opacity: 0.8;
+	transition: all 0.5s ease-in-out;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.logoRight {
+	animation-name: rotateRight;
+}
+
+.logoLeft {
+	animation-name: rotateLeft;
+}
+
+.logo:hover {
+	transform: scale(1.15);
+	opacity: 1;
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes rotateRight {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotateLeft {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
+}
+
+.separator::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(
+		to right,
+		transparent 0%,
+		rgba(255, 255, 255, 0.2) 50%,
+		transparent 100%
+	);
+	animation: slide 3s ease-in-out infinite;
+}
+
+@keyframes slide {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}

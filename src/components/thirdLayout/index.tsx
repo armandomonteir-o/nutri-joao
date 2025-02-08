@@ -68,11 +68,15 @@ export default function ThirdLayout() {
 							<div className={styles.imageSection}>
 								<div className={styles.iconContainer}>
 									<Image
-										className={styles.icon}
+										className={`${styles.icon} ${
+											index === 0
+												? styles.flippedImage
+												: ""
+										}`}
 										src={plan.icon.src}
 										alt={plan.title}
-										width={125}
-										height={125}
+										width={500}
+										height={500}
 										priority={index === 0}
 									/>
 								</div>

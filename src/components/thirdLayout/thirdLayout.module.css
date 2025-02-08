@@ -33,7 +33,7 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	width: 75%;
+	width: 70%;
 	background: var(--secondary-bg);
 	padding: 2.5rem;
 	border-radius: 20px;
@@ -67,17 +67,27 @@
 	gap: 2rem;
 	width: 100%;
 	height: 100%;
-	margin-top: 2rem;
 }
 
 .imageSection {
 	flex: 1;
-	width: fit-content;
 	align-self: center;
-	max-width: 40%;
-	height: auto;
+	max-width: 50%;
 	display: flex;
 	justify-content: center;
+	height: 60vh;
+	margin-top: -25px;
+	margin-left: 10vh;
+}
+
+.flippedImage {
+	transform: scaleX(-1);
+}
+
+.imageSection img {
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
 }
 
 .textSection {
@@ -85,8 +95,7 @@
 	display: flex;
 	flex-direction: column;
 	max-width: 80%;
-	padding-left: 2rem;
-	margin-left: 15vh;
+	padding-left: 4em;
 }
 
 .cardHeader {
@@ -215,6 +224,22 @@
 		width: 100%;
 		max-width: 250px;
 	}
+}
+
+.iconContainer {
+	overflow: hidden;
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	transform: scale(1.1);
+	margin-top: 5px;
+}
+
+.icon {
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	object-fit: contain;
 }
 
 @keyframes scaleIn {

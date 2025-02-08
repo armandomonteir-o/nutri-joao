@@ -1,40 +1,55 @@
-import exerciseIcon from "../../public/exercise.svg"
-import weightsIcon from "../../public/weights.svg"
-import graphIcon from "../../public/graph.svg"
+import jampaThreeIcon from "../../public/jampaempe3.png"
+import jampaOneIcon from "../../public/jampaempe1.png"
+import jampaTwoIcon from "../../public/jampaempe2.png"
+import { StaticImageData } from "next/image"
 
-export const plans = [
+interface Plan {
+	id: string
+	icon: StaticImageData
+	title: string
+	benefits: string[]
+	price: number
+	whatsappMessage: string
+}
+
+export const plans: Plan[] = [
 	{
 		id: "consulta-reavaliacao",
-		icon: exerciseIcon,
-		title: "Consulta e reavaliação",
+		icon: jampaThreeIcon,
+		title: "Consulta e Reavaliação",
 		benefits: [
-			"Consultoria básica ",
-			"Consultoria básica",
-			"Consultoria básica",
+			"Avaliação inicial completa",
+			"Plano nutricional personalizado",
+			"Acompanhamento quinzenal",
 		],
+		price: 100,
 		whatsappMessage:
 			"Olá, gostaria de saber mais sobre o plano *Consulta e reavaliação!*",
 	},
 	{
 		id: "consultoria-3meses",
-		icon: weightsIcon,
+		icon: jampaTwoIcon,
 		title: "Consultoria 3 meses",
 		benefits: [
 			"Todas vantagens do plano anterior",
 			"Acesso a comunidade exclusiva",
 			"Monitoramento semanal do cultivo",
 		],
-		whatsappMessage: "Olá, quero assinar o plano Consultoria 3 meses!",
+		price: 200,
+		whatsappMessage:
+			"Olá, gostaria de saber mais sobre o plano *Consultoria 3 meses!*",
 	},
 	{
 		id: "consultoria-6meses",
-		icon: graphIcon,
+		icon: jampaOneIcon,
 		title: "Consultoria 6 meses",
 		benefits: [
 			"Consultoria premium 24/7",
-			"Consultoria premium 24/7",
-			"Consultoria premium 24/7",
+			"Comigo você é bem mais feliz",
+			"Garantia de sucesso",
 		],
-		whatsappMessage: "Olá, me interesso pelo plano Consultoria 6 meses",
+		price: 300,
+		whatsappMessage:
+			"Olá, gostaria de saber mais sobre o plano *Consultoria 6 meses!*",
 	},
 ]

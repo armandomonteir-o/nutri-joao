@@ -5,6 +5,7 @@ import SecondLayout from "@/components/secondLayout"
 import ThirdLayout from "@/components/thirdLayout"
 import sectionStyles from "@/styles/section.module.css"
 import "../styles/globals.css"
+import FourthLayout from "@/components/fourthLayout"
 
 export default function Home() {
 	const [, setActiveSection] = useState(0)
@@ -60,6 +61,15 @@ export default function Home() {
 				className={`${sectionStyles.section} ${sectionStyles["third-layout-section"]}`}
 			>
 				<ThirdLayout />
+			</div>
+			{/* FourthLayout */}
+			<div
+				ref={(el) => {
+					if (el) sectionsRef.current[3] = el
+				}}
+				className={`${sectionStyles.section} ${sectionStyles["section--inverted"]}`}
+			>
+				<FourthLayout />
 			</div>
 		</main>
 	)

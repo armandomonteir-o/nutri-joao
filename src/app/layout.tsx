@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Anton } from "next/font/google"
 import "../styles/globals.css"
 
 const geistSans = Geist({
@@ -17,6 +17,13 @@ export const metadata: Metadata = {
 	description: "Tenha resultados incríveis ",
 }
 
+const anton = Anton({
+	subsets: ["latin"],
+	weight: "400",
+	display: "swap",
+	variable: "--font-anton",
+})
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -24,7 +31,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} ${anton.variable}`}
+			>
 				{children}
 			</body>
 		</html>

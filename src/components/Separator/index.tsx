@@ -1,37 +1,59 @@
 import Image from "next/image"
 import styles from "./Separator.module.css"
+import { defaultLogos } from "@/constants/logos"
 
-export default function Separator() {
-	const logos = [
-		"/slimmindwhitelogo.png",
-		"/slimmindwhitelogo.png",
-		"/slimmindwhitelogo.png",
-		"/slimmindwhitelogo.png",
-		"/slimmindwhitelogo.png",
-		"/slimmindwhitelogo.png",
-		"/slimmindwhitelogo.png",
-	]
+interface SeparatorProps {
+	type?: "default" | "typingContinuous"
+	logos?: string[]
+}
+
+export default function Separator({
+	type = "default",
+	logos = defaultLogos,
+}: SeparatorProps) {
+	const repeatedText = Array(10).fill("SlimMind");
 
 	return (
-		<div className={styles.separator}>
-			{logos.map((logo, index) => (
-				<Image
-					key={index}
-					src={logo}
-					alt={`Logo ${index + 1}`}
-					width={250}
-					height={250}
-					className={`${styles.logo} ${
-						index % 2 === 0
-							? styles.logoRight
-							: styles.logoLeft
-					}`}
-					style={{
-						minWidth: `${75 / logos.length}%`,
-						animationDelay: `${index * 0.5}s`,
-					}}
-				/>
-			))}
+		<div className={styles.separator} data-type={type}>
+			{type === "typingContinuous" ? (
+				<div className={styles.continuousContainer}>
+					<div className={styles.continuousRow}>
+						{repeatedText.map((text, index) => (
+							<span key={`top-${index}`} className={styles.text}>
+								{text}
+							</span>
+						))}
+					</div>
+					<div className={`${styles.continuousRow} ${styles.reverse}`}>
+						{repeatedText.map((text, index) => (
+							<span key={`bottom-${index}`} className={styles.text}>
+								{text}
+							</span>
+						))}
+					</div>
+				</div>
+			) : (
+				<>
+					{logos.map((logo, index) => (
+						<Image
+							key={`${logo}-${index}`}
+							src={logo}
+							alt={`Logo ${index + 1}`}
+							width={250}
+							height={250}
+							className={`${styles.logo} ${
+								index % 2 === 0
+									? styles.logoRight
+									: styles.logoLeft
+							}`}
+							style={{
+								minWidth: `${75 / logos.length}%`,
+								animationDelay: `${index * 0.5}s`,
+							}}
+						/>
+					))}
+				</>
+			)}
 		</div>
 	)
 }

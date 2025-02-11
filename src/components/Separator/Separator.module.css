@@ -75,3 +75,60 @@
 		transform: translateX(100%);
 	}
 }
+
+.separator[data-type="continuos"] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20vh;
+	margin-bottom: 5vh;
+}
+
+.continuosContainer {
+	width: 100%;
+	overflow: hidden;
+	padding: 20px 0;
+}
+
+.continuousRow {
+  display: flex;
+  animation: slideRight 20s linear infinite;
+  width: fit-content;
+  gap: 2rem;
+}
+
+.reverse {
+  animation: slideLeft 20s linear infinite;
+}
+
+.text {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.text:hover {
+  opacity: 1;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-33.33%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

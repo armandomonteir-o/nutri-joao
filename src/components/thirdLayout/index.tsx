@@ -140,7 +140,7 @@ export default function ThirdLayout() {
 						</div>
 					</div>
 
-					{index < plans.length - 1 && <Separator />}
+					<Separator type={index === plans.length - 1 ? "typingContinuous" : "default"} />
 				</Fragment>
 			))}
 		</div>

@@ -74,14 +74,60 @@
 	color: var(--secondary-bg);
 }
 
-.section {
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	background: linear-gradient(
-			rgba(53, 53, 187, 0.882),
-			rgba(53, 53, 187, 0.442)
-		),
-		url("../../../../public/slimmindlogo.png");
-	background-position: center;
+
+
+@media screen and (max-width: 896px) {
+	.videocontainer {
+		width: 100%;
+		height: auto;
+		max-width: 414px;
+		margin: 0 auto;
+	}
+}
+
+
+@media screen and (max-width: 414px) {
+	.videocontainer {
+		width: 100%;
+		height: auto;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container h1 {
+		font-size: 28px;
+		line-height: 30px;
+	}
+
+	.container p {
+		font-size: 18px;
+		line-height: 8px;
+	}
+
+	.buttonWrapper {
+		padding: 2vh;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.container h1 {
+		font-size: 24px;
+		line-height: 26px;
+	}
+
+	.container h2 {
+		font-size: 16px;
+		line-height: 20px;
+		width: 90%;
+	}
+
+	.container p {
+		font-size: 16px;
+		line-height: 6px;
+	}
+
+	.buttonWrapper {
+		padding: 2.0vh;
+	}
 }

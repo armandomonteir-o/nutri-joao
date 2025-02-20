@@ -52,3 +52,22 @@
 	transition-timing-function: ease-out;
 	height: calc(100% + 20px);
 }
+
+@media (max-width: 768px) {
+	.section {
+		min-height: 80vh;
+		margin-left: -2vh;
+	}
+
+	.section::before,
+	.section::after {
+		background-position: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.section {
+		min-height: 70vh;
+		margin-left: 0;
+	}
+}

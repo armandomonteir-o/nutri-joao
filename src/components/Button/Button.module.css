@@ -46,3 +46,37 @@
 	color: var(--secondary-bg);
 	box-shadow: 0 5px 15px rgba(236, 236, 240, 0.3);
 }
+
+@media (max-width: 768px) {
+	.button {
+		padding: calc(var(--button-padding) * 0.8);
+		font-size: calc(var(--button-font-size) * 0.9);
+	}
+
+	.button.primary,
+	.button.secondary {
+		width: 25vh;
+	}
+
+	.button.thirdary {
+		width: 35vh;
+		padding: 2vh;
+	}
+}
+
+@media (max-width: 480px) {
+	.button {
+		padding: calc(var(--button-padding) * 0.7);
+		font-size: calc(var(--button-font-size) * 0.8);
+	}
+
+	.button.primary,
+	.button.secondary {
+		width: 20vh;
+	}
+
+	.button.thirdary {
+		width: 30vh;
+		padding: 1.8vh;
+	}
+}

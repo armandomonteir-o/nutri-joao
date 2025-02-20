@@ -58,6 +58,7 @@ export default function SecondLayout() {
 							alt="Psicólogo João Paulo"
 							width={350}
 							height={350}
+							className={styles.responsiveImage}
 							style={{
 								borderRadius: "12px",
 							}}
@@ -66,7 +67,6 @@ export default function SecondLayout() {
 					<Button>Entre em contato</Button>
 				</div>
 
-				{/* Segundo Card  */}
 				<div
 					ref={secondCardRef}
 					className={`${styles.card} ${styles.left} ${styles.hidden}`}
@@ -78,9 +78,9 @@ export default function SecondLayout() {
 							alt="logo"
 							width={350}
 							height={350}
+							className={styles.responsiveImage}
 							style={{
-								borderRadius: "12px",
-								marginLeft: "2rem",
+								borderRadius: "12px"
 							}}
 						/>
 						<p>

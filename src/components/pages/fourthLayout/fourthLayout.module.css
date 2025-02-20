@@ -3,7 +3,7 @@
 	flex-direction: column;
 	min-height: 100vh;
 	width: 85%;
-	margin: 0 auto;
+	margin-left: 6vh;
 	gap: 80px;
 	padding: 4rem 0;
 	background: var(--secondary-bg);
@@ -129,11 +129,11 @@
 }
 
 .carouselWrapper :global(.alice-carousel__prev-btn-item) {
-	left: -72px;
+	left: -5%;
 }
 
 .carouselWrapper :global(.alice-carousel__next-btn-item) {
-	right: -72px;
+	right: -5%;
 }
 
 .carouselWrapper :global(.alice-carousel__prev-btn-item span),
@@ -165,9 +165,10 @@
 
 @media (max-width: 768px) {
 	.container {
-		width: 95%;
+		width: 100%;
 		gap: 50px;
 		padding: 2rem 0;
+		margin-left: 0vh;
 	}
 
 	.whyConsultWrapper h2 {
@@ -185,5 +186,38 @@
 	.avatar {
 		width: 80px;
 		height: 80px;
+	}
+
+	.carouselWrapper :global(.alice-carousel__prev-btn-item),
+	.carouselWrapper :global(.alice-carousel__next-btn-item) {
+		display: none;
+	}
+}
+@media (max-width: 1200px) {
+	.carouselWrapper :global(.alice-carousel__prev-btn-item),
+	.carouselWrapper :global(.alice-carousel__next-btn-item) {
+		width: 40px;
+		height: 40px;
+	}
+
+	.carouselWrapper :global(.alice-carousel__prev-btn-item) {
+		left: -50px;
+	}
+
+	.carouselWrapper :global(.alice-carousel__next-btn-item) {
+		right: -50px;
+	}
+}
+
+@media (max-width: 992px) {
+	.carouselWrapper :global(.alice-carousel__prev-btn-item),
+	.carouselWrapper :global(.alice-carousel__next-btn-item) {
+		width: 36px;
+		height: 36px;
+	}
+
+	.carouselWrapper :global(.alice-carousel__prev-btn-item span),
+	.carouselWrapper :global(.alice-carousel__next-btn-item span) {
+		font-size: 1.5rem;
 	}
 }

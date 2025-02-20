@@ -34,7 +34,7 @@ export default function FourthLayout() {
 					mouseTracking
 					infinite
 					autoPlay
-					autoPlayInterval={4000}
+					autoPlayInterval={3000}
 					animationDuration={800}
 					disableDotsControls
 					responsive={responsive}

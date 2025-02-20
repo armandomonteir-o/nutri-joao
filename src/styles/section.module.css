@@ -71,3 +71,22 @@
 		margin-left: 0;
 	}
 }
+
+@media (max-width: 380px) {
+	.section {
+		min-height: 60vh;
+		margin-left: 0;
+	}
+
+	.section::before,
+	.section::after {
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (max-width: 280px) {
+	.section {
+		min-height: 50vh;
+	}
+}

@@ -78,6 +78,7 @@
 	height: 60vh;
 	margin-top: -25px;
 	margin-left: 10vh;
+	position: relative;
 }
 
 .flippedImage {
@@ -190,10 +191,56 @@
 }
 
 /* Responsivo */
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 90%;
+		gap: 80px;
+	}
+
+	.container h2 {
+		font-size: 4rem;
+	}
+
+	.textSection {
+		padding-left: 2em;
+	}
+
+	.imageSection {
+		max-width: 45%;
+		height: 50vh;
+		margin-left: 5vh;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.container h2 {
+		font-size: 3.5rem;
+	}
+
+	.imageSection {
+		max-width: 40%;
+		height: 45vh;
+		margin-left: 2vh;
+	}
+
+	.iconContainer {
+		transform: scale(1.05);
+	}
+
+	.cardHeader h3 {
+		font-size: 1.8rem;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.container {
 		width: 95%;
 		gap: 60px;
+	}
+
+	.container h2 {
+		font-size: 2.8rem;
+		padding: 1rem 0;
 	}
 
 	.card {
@@ -205,11 +252,30 @@
 	.contentWrapper {
 		flex-direction: column;
 		align-items: center;
+		gap: 1rem;
 	}
 
 	.imageSection {
 		width: 100%;
-		max-width: 250px;
+		max-width: 300px; 
+		height: 35vh;
+		margin: 0 auto; 
+		padding: 1rem 0;
+	}
+
+	.iconContainer {
+		transform: scale(1);
+		margin-top: 0;
+	}
+
+	.icon {
+		object-fit: contain;
+		max-height: 300px;
+	}
+
+	.textSection {
+		max-width: 100%;
+		padding-left: 0;
 	}
 
 	.benefitItem {
@@ -223,6 +289,43 @@
 	.whatsappButton {
 		width: 100%;
 		max-width: 250px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.container h2 {
+		font-size: 2.2rem;
+	}
+
+	.cardHeader h3 {
+		font-size: 1.5rem;
+	}
+
+	.card {
+		padding: 1rem;
+	}
+	.card:nth-child(6) {
+		padding: 1rem;
+		margin-bottom: 3vh;
+	}
+	.imageSection {
+        max-width: 250px;
+        height: 30vh;
+    }
+
+	.benefitsGrid {
+		align-self: center;	
+	}
+
+    .icon {
+        max-height: 250px;
+    }
+
+	.cardHeader {
+		margin-bottom: 2rem;
+		width: fit-content;
+		align-self: center;
 	}
 }
 
@@ -233,6 +336,7 @@
 	height: 100%;
 	transform: scale(1.1);
 	margin-top: 5px;
+	position: relative;
 }
 
 .icon {
@@ -240,6 +344,7 @@
 	height: 100%;
 	max-width: 100%;
 	object-fit: contain;
+	transition: transform 0.3s ease;
 }
 
 @keyframes scaleIn {

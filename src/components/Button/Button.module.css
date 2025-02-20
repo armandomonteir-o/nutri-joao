@@ -73,6 +73,9 @@
 	.button.primary,
 	.button.secondary {
 		width: 20vh;
+		height: 5vh;
+		align-self: center;
+		margin-top: 2vh;
 	}
 
 	.button.thirdary {

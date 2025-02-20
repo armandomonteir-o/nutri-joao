@@ -17,22 +17,22 @@ export default function Separator({
 		<div className={styles.separator} data-type={type}>
 			{type === "Continuous" ? (
 				<div className={styles.continuousContainer}>
-					<div className={styles.continuousRow}>
-						{repeatedText.map((text, index) => (
-							<span
-								key={`top-${index}`}
-								className={styles.text}
-							>
-								{text}
-							</span>
-						))}
-					</div>
 					<div
 						className={`${styles.continuousRow} ${styles.reverse}`}
 					>
 						{repeatedText.map((text, index) => (
 							<span
 								key={`bottom-${index}`}
+								className={styles.text}
+							>
+								{text}
+							</span>
+						))}
+					</div>
+					<div className={styles.continuousRow}>
+						{repeatedText.map((text, index) => (
+							<span
+								key={`top-${index}`}
 								className={styles.text}
 							>
 								{text}

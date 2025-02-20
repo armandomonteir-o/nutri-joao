@@ -296,6 +296,10 @@
 @media screen and (max-width: 480px) {
 	.container h2 {
 		font-size: 2.2rem;
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation: none;
+		animation: none;
 	}
 
 	.cardHeader h3 {
@@ -304,23 +308,27 @@
 
 	.card {
 		padding: 1rem;
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation: none;
+		animation: none;
 	}
 	.card:nth-child(6) {
 		padding: 1rem;
 		margin-bottom: 3vh;
 	}
 	.imageSection {
-        max-width: 250px;
-        height: 30vh;
-    }
+		max-width: 250px;
+		height: 30vh;
+	}
 
 	.benefitsGrid {
 		align-self: center;	
 	}
 
-    .icon {
-        max-height: 250px;
-    }
+	.icon {
+		max-height: 250px;
+	}
 
 	.cardHeader {
 		margin-bottom: 2rem;

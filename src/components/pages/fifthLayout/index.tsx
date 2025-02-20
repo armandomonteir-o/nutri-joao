@@ -2,9 +2,11 @@
 import { useEffect, useRef } from "react"
 import styles from "@/components/pages/fifthLayout/fifthLayout.module.css"
 import { FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin } from "react-icons/fa"
+import { faq } from "@/constants/faq"
 
 export default function FifthLayout() {
 	const faqRefs = useRef<HTMLDivElement[]>([])
+	const items = faq
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -66,7 +68,7 @@ export default function FifthLayout() {
 			</div>
 
 			<div className={styles.faqContainer}>
-				{[...Array(3)].map((_, index) => (
+				{items.map((item, index) => (
 					<div
 						key={index}
 						ref={(el) => {
@@ -75,9 +77,9 @@ export default function FifthLayout() {
 						className={styles.faqWrapper}
 					>
 						<h3 className={styles.faqQuestion}>
-							Ficou alguma dúvida?
+							{item.question}
 						</h3>
-						<p className={styles.faqAnswer}>tantannanan</p>
+						<p className={styles.faqAnswer}>{item.answer}</p>
 					</div>
 				))}
 			</div>

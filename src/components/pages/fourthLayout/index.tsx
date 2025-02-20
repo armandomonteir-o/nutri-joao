@@ -2,9 +2,9 @@
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 import Image from "next/image"
-import styles from "./fourthLayout.module.css"
+import styles from "@/components/pages/fourthLayout/fourthLayout.module.css"
 import { feedback } from "@/constants/feedbacks"
-import "react-alice-carousel/lib/alice-carousel.css";
+import "react-alice-carousel/lib/alice-carousel.css"
 
 export default function FourthLayout() {
 	const responsive = {

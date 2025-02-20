@@ -1,10 +1,10 @@
 "use client"
 import { useEffect, useRef } from "react"
-import styles from "../secondLayout/secondLayout.module.css"
-import slimMindLogo from "../../../public/slimmindlogo.png"
+import styles from "@/components/pages/secondLayout/secondLayout.module.css"
+import slimMindLogo from "../../../../public/slimmindlogo.png"
 import Image from "next/image"
-import JampaImage from "../../../public/jampo.png"
-import Button from "../Button"
+import JampaImage from "../../../../public/jampo.png"
+import Button from "@/components/Button"
 
 export default function SecondLayout() {
 	const firstCardRef = useRef(null)

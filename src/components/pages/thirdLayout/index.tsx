@@ -1,9 +1,9 @@
 "use client"
 import { useEffect, useRef, Fragment } from "react"
 import Image from "next/image"
-import styles from "./thirdLayout.module.css"
+import styles from "@/components/pages/thirdLayout/thirdLayout.module.css"
 import { plans } from "@/constants/plans"
-import Separator from "../Separator"
+import Separator from "@/components/Separator"
 
 export default function ThirdLayout() {
 	const cardsRef = useRef<Array<HTMLDivElement | null>>([])
@@ -61,7 +61,7 @@ export default function ThirdLayout() {
 						}}
 						className={`${styles.card} ${
 							index % 2 ? styles.left : styles.right
-						}`}
+						} ${index === plans.length - 1 ? styles.lastCard : ''}`}
 					>
 						<div className={styles.contentWrapper}>
 							{/* Container da imagem */}
@@ -140,7 +140,15 @@ export default function ThirdLayout() {
 						</div>
 					</div>
 
-					<Separator type={index === plans.length - 1 ? "typingContinuous" : "default"} />
+					<div style={{ marginTop: index === plans.length - 1 ? '-10vh' : 0 }}>
+						<Separator
+							type={
+								index === plans.length - 1
+									? "Continuous"
+									: "default"
+							}
+						/>
+					</div>
 				</Fragment>
 			))}
 		</div>

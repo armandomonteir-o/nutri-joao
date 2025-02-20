@@ -1,11 +1,12 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
-import InitialLayout from "@/components/initialLayout"
-import SecondLayout from "@/components/secondLayout"
-import ThirdLayout from "@/components/thirdLayout"
+import InitialLayout from "@/components/pages/initialLayout"
+import SecondLayout from "@/components/pages/secondLayout"
+import ThirdLayout from "@/components//pages/thirdLayout"
 import sectionStyles from "@/styles/section.module.css"
 import "../styles/globals.css"
-import FourthLayout from "@/components/fourthLayout"
+import FourthLayout from "@/components/pages/fourthLayout"
+import FifthLayout from "@/components/pages/fifthLayout"
 
 export default function Home() {
 	const [, setActiveSection] = useState(0)
@@ -70,6 +71,14 @@ export default function Home() {
 				className={`${sectionStyles.section} ${sectionStyles["section--inverted"]}`}
 			>
 				<FourthLayout />
+			</div>
+			<div
+				ref={(el) => {
+					if (el) sectionsRef.current[0] = el
+				}}
+				className={`${sectionStyles.section}`}
+			>
+				<FifthLayout />
 			</div>
 		</main>
 	)

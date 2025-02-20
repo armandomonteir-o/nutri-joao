@@ -1,11 +1,10 @@
 "use client"
-
 import Image from "next/image"
-import slimMindLogo from "../../../public/slimmindwhitelogo.png"
-import styles from "../initialLayout/initialLayout.module.css"
+import slimMindLogo from "../../../../public/slimmindlogo.png"
+import styles from "@/components/pages/initialLayout/initialLayout.module.css"
 import Video from "next-video"
-import getStarted from "../../../videos/get-started.mp4"
-import Button from "../Button"
+import getStarted from "../../../../videos/get-started.mp4"
+import Button from "@/components/Button"
 
 export default function initialLayout() {
 	const handleClick = () => {

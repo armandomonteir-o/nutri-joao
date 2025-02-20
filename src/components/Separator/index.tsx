@@ -3,7 +3,7 @@ import styles from "./Separator.module.css"
 import { defaultLogos } from "@/constants/logos"
 
 interface SeparatorProps {
-	type?: "default" | "typingContinuous"
+	type?: "default" | "Continuous"
 	logos?: string[]
 }
 
@@ -11,22 +11,30 @@ export default function Separator({
 	type = "default",
 	logos = defaultLogos,
 }: SeparatorProps) {
-	const repeatedText = Array(10).fill("SlimMind");
+	const repeatedText = Array(10).fill("SlimMind")
 
 	return (
 		<div className={styles.separator} data-type={type}>
-			{type === "typingContinuous" ? (
+			{type === "Continuous" ? (
 				<div className={styles.continuousContainer}>
 					<div className={styles.continuousRow}>
 						{repeatedText.map((text, index) => (
-							<span key={`top-${index}`} className={styles.text}>
+							<span
+								key={`top-${index}`}
+								className={styles.text}
+							>
 								{text}
 							</span>
 						))}
 					</div>
-					<div className={`${styles.continuousRow} ${styles.reverse}`}>
+					<div
+						className={`${styles.continuousRow} ${styles.reverse}`}
+					>
 						{repeatedText.map((text, index) => (
-							<span key={`bottom-${index}`} className={styles.text}>
+							<span
+								key={`bottom-${index}`}
+								className={styles.text}
+							>
 								{text}
 							</span>
 						))}

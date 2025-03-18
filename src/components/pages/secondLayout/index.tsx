@@ -5,7 +5,6 @@ import slimMindLogo from "../../../../public/images/slimmindlogo.webp"
 import Image from "next/image"
 import JampaImage from "../../../../public/images/jampo.png"
 import Button from "@/components/Button"
-import textStyles from "@/styles/text.module.css"
 
 export default function SecondLayout() {
 	const firstCardRef = useRef(null)

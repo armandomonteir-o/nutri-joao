@@ -1,6 +1,5 @@
 import { StaticImageData } from "next/image"
-import weightIcon from "../../public/weights.svg"
-
+import weightIcon from "../../public/images/weights.svg"
 
 interface feedback {
 	name: string

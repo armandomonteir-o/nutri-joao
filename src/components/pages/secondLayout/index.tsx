@@ -1,10 +1,11 @@
 "use client"
 import { useEffect, useRef } from "react"
 import styles from "@/components/pages/secondLayout/secondLayout.module.css"
-import slimMindLogo from "../../../../public/slimmindlogo.png"
+import slimMindLogo from "../../../../public/images/slimmindlogo.webp"
 import Image from "next/image"
-import JampaImage from "../../../../public/jampo.png"
+import JampaImage from "../../../../public/images/jampo.png"
 import Button from "@/components/Button"
+import textStyles from "@/styles/text.module.css"
 
 export default function SecondLayout() {
 	const firstCardRef = useRef(null)
@@ -80,7 +81,7 @@ export default function SecondLayout() {
 							height={350}
 							className={styles.responsiveImage}
 							style={{
-								borderRadius: "12px"
+								borderRadius: "12px",
 							}}
 						/>
 						<p>

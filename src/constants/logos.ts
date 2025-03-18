@@ -1,9 +1,9 @@
 export const defaultLogos = [
-	"/slimmindwhitelogo.png",
-	"/slimmindwhitelogo.png",
-	"/slimmindwhitelogo.png",
-	"/slimmindwhitelogo.png",
-	"/slimmindwhitelogo.png",
-	"/slimmindwhitelogo.png",
-	"/slimmindwhitelogo.png",
+	"/images/slimmindwhitelogo.webp",
+	"/images/slimmindwhitelogo.webp",
+	"/images/slimmindwhitelogo.webp",
+	"/images/slimmindwhitelogo.webp",
+	"/images/slimmindwhitelogo.webp",
+	"/images/slimmindwhitelogo.webp",
+	"/images/slimmindwhitelogo.webp",
 ]

@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import slimMindLogo from "../../../../public/slimmindwhitelogo.png"
+import slimMindLogo from "../../../../public/images/slimmindwhitelogo.webp"
 import styles from "@/components/pages/initialLayout/initialLayout.module.css"
 import Video from "next-video"
 import getStarted from "../../../../videos/get-started.mp4"

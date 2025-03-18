@@ -11,7 +11,7 @@ export default function Separator({
 	type = "default",
 	logos = defaultLogos,
 }: SeparatorProps) {
-	const repeatedText = Array(10).fill("SlimMind")
+	const repeatedText = Array(15).fill("SlimMind")
 
 	return (
 		<div className={styles.separator} data-type={type}>

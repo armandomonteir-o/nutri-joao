@@ -28,7 +28,7 @@
 			rgba(53, 53, 187, 0.882),
 			rgba(53, 53, 187, 0.442)
 		),
-		url("../../public/slimmindlogo.png");
+		url("/images/slimmindlogo.webp");
 	opacity: 1;
 }
 
@@ -38,7 +38,7 @@
 			rgba(53, 53, 187, 0.442),
 			rgba(53, 53, 187, 0.882)
 		),
-		url("../../public/slimmindlogo.png");
+		url("/images/slimmindlogo.webp");
 	opacity: 0;
 }
 

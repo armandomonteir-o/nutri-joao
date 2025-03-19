@@ -18,19 +18,30 @@ export default function RatingAverage() {
 	const [isClient, setIsClient] = useState(false)
 
 	useEffect(() => {
-		// Marca que estamos no cliente
 		setIsClient(true)
 
 		async function fetchRatings() {
 			try {
 				const response = await fetch("/api/ratings")
-				if (!response.ok) {
-					throw new Error("Falha ao buscar as avaliações")
-				}
 				const data = await response.json()
+
+				if (!response.ok) {
+					throw new Error(
+						data.error || "Erro ao carregar avaliações"
+					)
+				}
+
 				setRatingData(data)
 			} catch (error) {
 				console.error("Erro ao buscar avaliações:", error)
+				setRatingData({
+					averageRating: 0,
+					totalReviews: 0,
+					error:
+						error instanceof Error
+							? error.message
+							: "Erro ao carregar avaliações",
+				})
 			} finally {
 				setLoading(false)
 			}
@@ -39,14 +50,10 @@ export default function RatingAverage() {
 		fetchRatings()
 	}, [])
 
-	// Renderiza as estrelas com base na avaliação média
-	const renderStars = () => {
+	const renderStars = (rating: number) => {
 		const stars = []
-		const rating = ratingData.averageRating
-
 		for (let i = 1; i <= 5; i++) {
 			if (i <= rating) {
-				// Estrela cheia
 				stars.push(
 					<Image
 						key={i}
@@ -58,7 +65,6 @@ export default function RatingAverage() {
 					/>
 				)
 			} else if (i - 0.5 <= rating) {
-				// Meia estrela
 				stars.push(
 					<Image
 						key={i}
@@ -70,7 +76,6 @@ export default function RatingAverage() {
 					/>
 				)
 			} else {
-				// Estrela vazia
 				stars.push(
 					<Image
 						key={i}
@@ -83,26 +88,45 @@ export default function RatingAverage() {
 				)
 			}
 		}
-
 		return stars
 	}
 
-	// Só renderiza o componente no cliente para evitar erros de hidratação
 	if (!isClient) {
-		return null // Não renderiza nada no servidor
+		return null
 	}
 
 	if (loading) {
 		return (
 			<div className={styles.ratingContainer}>
-				<div className={styles.loading}>Carregando avaliações</div>
+				<div className={styles.loading}>
+					Carregando avaliações...
+				</div>
+			</div>
+		)
+	}
+
+	if (ratingData.error) {
+		return (
+			<div className={styles.ratingContainer}>
+				<div className={styles.message}>
+					<Image
+						src="/images/star-empty.svg"
+						alt="Ícone de avaliação"
+						width={32}
+						height={32}
+						className={styles.messageIcon}
+					/>
+					<p>{ratingData.error}</p>
+				</div>
 			</div>
 		)
 	}
 
 	return (
 		<div className={styles.ratingContainer}>
-			<div className={styles.ratingStars}>{renderStars()}</div>
+			<div className={styles.ratingStars}>
+				{renderStars(ratingData.averageRating)}
+			</div>
 			<div className={styles.ratingInfo}>
 				<span className={styles.ratingValue}>
 					{ratingData.averageRating.toFixed(1)}

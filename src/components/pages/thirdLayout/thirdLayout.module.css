@@ -67,36 +67,54 @@
 	gap: 2rem;
 	width: 100%;
 	height: 100%;
+	position: relative;
 }
 
 .imageSection {
 	flex: 1;
-	align-self: center;
-	max-width: 50%;
+	align-self: stretch;
+	max-width: 40%;
 	display: flex;
 	justify-content: center;
-	height: 60vh;
-	margin-top: -25px;
-	margin-left: 10vh;
+	align-items: center;
+	height: auto;
+	min-height: 400px;
+	margin: 0;
+	padding: 2rem;
 	position: relative;
+}
+
+.iconContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: visible;
+	transform: scale(1.15);
+}
+
+.icon {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 450px;
+	object-fit: contain;
+	transition: transform 0.3s ease;
 }
 
 .flippedImage {
 	transform: scaleX(-1);
 }
 
-.imageSection img {
-	width: 100%;
-	height: 100%;
-	max-width: 100%;
-}
-
 .textSection {
 	flex: 2;
 	display: flex;
 	flex-direction: column;
-	max-width: 80%;
-	padding-left: 4em;
+	max-width: 60%;
+	padding-left: 2rem;
+	justify-content: center;
 }
 
 .cardHeader {
@@ -201,14 +219,19 @@
 		font-size: 4rem;
 	}
 
-	.textSection {
-		padding-left: 2em;
-	}
-
 	.imageSection {
 		max-width: 45%;
-		height: 50vh;
-		margin-left: 5vh;
+		min-height: 350px;
+		padding: 1.5rem;
+	}
+
+	.icon {
+		max-height: 400px;
+	}
+
+	.textSection {
+		max-width: 55%;
+		padding-left: 1.5rem;
 	}
 }
 
@@ -219,12 +242,21 @@
 
 	.imageSection {
 		max-width: 40%;
-		height: 45vh;
-		margin-left: 2vh;
+		min-height: 300px;
+		padding: 1rem;
+	}
+
+	.icon {
+		max-height: 350px;
+	}
+
+	.textSection {
+		max-width: 60%;
+		padding-left: 1rem;
 	}
 
 	.iconContainer {
-		transform: scale(1.05);
+		transform: scale(1.12);
 	}
 
 	.cardHeader h3 {
@@ -252,30 +284,29 @@
 	.contentWrapper {
 		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	.imageSection {
-		width: 100%;
-		max-width: 300px;
-		height: 35vh;
-		margin: 0 auto;
-		padding: 1rem 0;
-	}
-
-	.iconContainer {
-		transform: scale(1);
-		margin-top: 0;
+		max-width: 100%;
+		min-height: 250px;
+		padding: 1rem 2rem;
 	}
 
 	.icon {
-		object-fit: contain;
 		max-height: 300px;
 	}
 
 	.textSection {
 		max-width: 100%;
 		padding-left: 0;
+		align-items: center;
+		text-align: center;
+	}
+
+	.iconContainer {
+		transform: scale(1.1);
+		margin-top: 0;
 	}
 
 	.benefitItem {
@@ -311,7 +342,7 @@
 		opacity: 1;
 		will-change: auto;
 		animation: none !important;
-		contain: content; 
+		contain: content;
 	}
 
 	.card.visible {
@@ -351,8 +382,12 @@
 	}
 
 	.imageSection {
-		max-width: 250px;
-		height: 30vh;
+		min-height: 200px;
+		padding: 0.5rem 1rem;
+	}
+
+	.icon {
+		max-height: 250px;
 	}
 
 	.benefitsGrid {
@@ -366,33 +401,15 @@
 		animation: none !important;
 	}
 
-	.icon {
-		max-height: 250px;
-	}
-
 	.cardHeader {
 		margin-bottom: 2rem;
 		width: fit-content;
 		align-self: center;
 	}
-}
 
-.iconContainer {
-	overflow: hidden;
-	border-radius: 10px;
-	width: 100%;
-	height: 100%;
-	transform: scale(1.1);
-	margin-top: 5px;
-	position: relative;
-}
-
-.icon {
-	width: 100%;
-	height: 100%;
-	max-width: 100%;
-	object-fit: contain;
-	transition: transform 0.3s ease;
+	.iconContainer {
+		transform: scale(1.05);
+	}
 }
 
 @keyframes scaleIn {

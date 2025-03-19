@@ -1,6 +1,6 @@
-import jampaThreeIcon from "../../public/images/jampaempe3.png"
-import jampaOneIcon from "../../public/images/jampaempe1.png"
-import jampaTwoIcon from "../../public/images/jampaempe2.png"
+import jampaThreeIcon from "../../public/images/joão-em-pé-3.webp"
+import jampaOneIcon from "../../public/images/joão-em-pé.webp"
+import jampaTwoIcon from "../../public/images/joão-em-pé-2.webp"
 import { StaticImageData } from "next/image"
 
 interface Plan {

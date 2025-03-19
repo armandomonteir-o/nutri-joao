@@ -6,10 +6,17 @@ import axios from "axios"
  */
 export async function fetchRatingsFromGoogleForm() {
 	try {
+		// Verifica ambiente de produção
+		const isProd = process.env.NODE_ENV === "production"
+
+		// Para desenvolvimento, podemos usar um mock se as variáveis de ambiente não estiverem definidas
 		if (
 			!process.env.GOOGLE_SPREADSHEET_ID ||
 			!process.env.GOOGLE_API_KEY
 		) {
+			if (isProd) {
+				throw new Error("Configuração de ambiente incompleta")
+			}
 			console.warn(
 				"Variáveis de ambiente do Google Sheets não configuradas, usando dados mock"
 			)
@@ -19,16 +26,33 @@ export async function fetchRatingsFromGoogleForm() {
 			}
 		}
 
+		// Validação básica das variáveis de ambiente
+		if (!/^[A-Za-z0-9-_]+$/.test(process.env.GOOGLE_SPREADSHEET_ID)) {
+			throw new Error("ID da planilha inválido")
+		}
+
+		// Conecta à API do Google Sheets
 		const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID
 		const API_KEY = process.env.GOOGLE_API_KEY
 		const RANGE = "B2:G" // Colunas B até G (6 avaliações numéricas)
 
 		const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`
 
-		console.log("Debug - URL da API:", url)
+		// Em produção, não logamos a URL completa com a chave API
+		if (isProd) {
+			console.log("Acessando Google Sheets API...")
+		} else {
+			console.log("Debug - URL da API:", url)
+		}
 
 		try {
-			const response = await axios.get(url)
+			const response = await axios.get(url, {
+				timeout: 5000, // Timeout de 5 segundos
+				headers: {
+					Accept: "application/json",
+					"User-Agent": "nutri-jampa/1.0",
+				},
+			})
 			const rows = response.data.values
 
 			if (!rows || rows.length === 0) {

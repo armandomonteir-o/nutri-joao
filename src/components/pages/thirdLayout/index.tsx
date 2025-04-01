@@ -21,14 +21,14 @@ export default function ThirdLayout() {
 						) {
 							const benefitItems =
 								entry.target.querySelectorAll(
-									`.${styles.benefitItem}`
+									`.${styles.benefitItem}`,
 								)
 							benefitItems.forEach((item) => {
 								item.classList.add(styles.visible)
 							})
 							setTimeout(() => {
 								entry.target.classList.add(
-									styles.visible
+									styles.visible,
 								)
 							}, 100)
 						}
@@ -37,13 +37,13 @@ export default function ThirdLayout() {
 			},
 			{
 				threshold: 0.1,
-			}
+			},
 		)
 
 		if (h2Ref.current) observer.observe(h2Ref.current)
 		cardsRef.current.forEach((card) => card && observer.observe(card))
 		benefitItemsRef.current.forEach(
-			(item) => item && observer.observe(item)
+			(item) => item && observer.observe(item),
 		)
 
 		return () => observer.disconnect()
@@ -59,20 +59,22 @@ export default function ThirdLayout() {
 						ref={(el) => {
 							if (el) cardsRef.current[index] = el
 						}}
-						className={`${styles.card} ${
-							index % 2 ? styles.left : styles.right
-						} ${index === plans.length - 1 ? styles.lastCard : ''}`}
+						className={styles.card}
+						style={{
+							flexDirection:
+								index === 1 ? "row-reverse" : "row",
+						}}
 					>
-						<div className={styles.contentWrapper}>
+						<div
+							className={`${styles.contentWrapper} ${index === 1 ? styles.contentWrapperReversed : ""}`}
+						>
 							{/* Container da imagem */}
 							<div className={styles.imageSection}>
-								<div className={styles.iconContainer}>
+								<div
+									className={`${styles.iconContainer} ${index === 1 ? styles.iconContainerSecond : ""}`}
+								>
 									<Image
-										className={`${styles.icon} ${
-											index === 0
-												? styles.flippedImage
-												: ""
-										}`}
+										className={styles.icon}
 										src={plan.icon.src}
 										alt={plan.title}
 										width={500}
@@ -118,14 +120,14 @@ export default function ThirdLayout() {
 													{benefit}
 												</span>
 											</div>
-										)
+										),
 									)}
 								</div>
 
 								<footer className={styles.cardFooter}>
 									<a
 										href={`https://wa.me/5524998416823?text=${encodeURIComponent(
-											plan.whatsappMessage
+											plan.whatsappMessage,
 										)}`}
 										className={
 											styles.whatsappButton
@@ -140,7 +142,14 @@ export default function ThirdLayout() {
 						</div>
 					</div>
 
-					<div style={{ marginTop: index === plans.length - 1 ? '-10vh' : 0 }}>
+					<div
+						style={{
+							marginTop:
+								index === plans.length - 1
+									? "-10vh"
+									: 0,
+						}}
+					>
 						<Separator
 							type={
 								index === plans.length - 1

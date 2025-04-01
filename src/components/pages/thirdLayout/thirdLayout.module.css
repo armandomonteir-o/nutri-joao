@@ -17,8 +17,10 @@
 	transform: scale(0);
 	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	color: var(--secondary-bg);
-	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1),
-		0 0 20px rgba(216, 217, 224, 0.3), 0 0 40px rgba(60, 71, 186, 0.2),
+	text-shadow:
+		2px 2px 4px rgba(255, 255, 255, 0.1),
+		0 0 20px rgba(216, 217, 224, 0.3),
+		0 0 40px rgba(60, 71, 186, 0.2),
 		0 0 60px rgba(60, 71, 186, 0.1);
 	letter-spacing: 0.05em;
 	background: linear-gradient(145deg, var(--secondary-bg), #f5f5f6);
@@ -27,7 +29,9 @@
 }
 
 .container h2.visible {
-	animation: basicPop 0.8s forwards, float 1s ease-in-out infinite 0.4s;
+	animation:
+		basicPop 0.8s forwards,
+		float 1s ease-in-out infinite 0.4s;
 }
 
 .card {
@@ -48,7 +52,9 @@
 }
 
 .card.visible {
-	animation: fadeIn 0.4s ease 0.3s forwards, scaleIn 0.4s ease 0.3s forwards,
+	animation:
+		fadeIn 0.4s ease 0.3s forwards,
+		scaleIn 0.4s ease 0.3s forwards,
 		float 3s ease-in-out infinite 0.7s;
 }
 
@@ -70,15 +76,19 @@
 	position: relative;
 }
 
+.contentWrapperReversed {
+	flex-direction: row-reverse;
+}
+
 .imageSection {
 	flex: 1;
 	align-self: stretch;
-	max-width: 40%;
+	min-width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: auto;
-	min-height: 400px;
+	min-height: 300px; /* Reduzido de 400px para 300px */
 	margin: 0;
 	padding: 2rem;
 	position: relative;
@@ -92,20 +102,18 @@
 	justify-content: center;
 	position: relative;
 	overflow: visible;
-	transform: scale(1.15);
+	transform: scale(1.5); /* Reduzido de 1.15 para 1 */
+}
+
+.iconContainerSecond {
+	transform: scale(1.2);
 }
 
 .icon {
-	width: auto;
-	height: auto;
 	max-width: 100%;
-	max-height: 450px;
+	max-height: 300px; /* Reduzido de 450px para 300px */
 	object-fit: contain;
 	transition: transform 0.3s ease;
-}
-
-.flippedImage {
-	transform: scaleX(-1);
 }
 
 .textSection {
@@ -146,7 +154,8 @@
 }
 
 .card.visible .benefitItem.visible {
-	animation: typing 2s steps(40, end) forwards,
+	animation:
+		typing 2s steps(40, end) forwards,
 		fadeIn 0.1s ease 1.8s forwards;
 }
 
@@ -155,7 +164,9 @@
 	position: absolute;
 	right: -5px;
 	top: 0;
-	animation: blink 0.7s infinite 1.8s, cursorMove 2s steps(40, end) forwards;
+	animation:
+		blink 0.7s infinite 1.8s,
+		cursorMove 2s steps(40, end) forwards;
 }
 
 /* Delay para itens */

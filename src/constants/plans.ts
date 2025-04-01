@@ -15,7 +15,7 @@ interface Plan {
 export const plans: Plan[] = [
 	{
 		id: "consulta-reavaliacao",
-		icon: jampaThreeIcon,
+		icon: jampaOneIcon,
 		title: "Consulta e Reavaliação",
 		benefits: [
 			"Avaliação inicial completa",
@@ -28,7 +28,7 @@ export const plans: Plan[] = [
 	},
 	{
 		id: "consultoria-3meses",
-		icon: jampaTwoIcon,
+		icon: jampaThreeIcon,
 		title: "Consultoria 3 meses",
 		benefits: [
 			"Todas vantagens do plano anterior",
@@ -41,7 +41,7 @@ export const plans: Plan[] = [
 	},
 	{
 		id: "consultoria-6meses",
-		icon: jampaOneIcon,
+		icon: jampaTwoIcon,
 		title: "Consultoria 6 meses",
 		benefits: [
 			"Consultoria premium 24/7",

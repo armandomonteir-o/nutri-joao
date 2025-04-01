@@ -69,12 +69,16 @@ export default function ThirdLayout() {
 							className={`${styles.contentWrapper} ${index === 1 ? styles.contentWrapperReversed : ""}`}
 						>
 							{/* Container da imagem */}
-							<div className={styles.imageSection}>
+							<div
+								className={`${styles.imageSection} ${index === 1 ? styles.imageSectionSecond : index === 2 ? styles.imageSectionThird : ""}`}
+							>
 								<div
-									className={`${styles.iconContainer} ${index === 1 ? styles.iconContainerSecond : ""}`}
+									className={`${styles.iconContainer}
+        ${index === 1 ? styles.iconContainerSecond : index === 2 ? styles.iconContainerThird : ""}`}
 								>
 									<Image
-										className={styles.icon}
+										className={`${styles.icon}
+                ${index === 1 ? styles.iconSecond : index === 2 ? styles.iconThird : ""}`}
 										src={plan.icon.src}
 										alt={plan.title}
 										width={500}

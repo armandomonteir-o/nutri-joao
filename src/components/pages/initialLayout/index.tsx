@@ -2,8 +2,6 @@
 import Image from "next/image"
 import slimMindLogo from "../../../../public/images/slimmindwhitelogo.webp"
 import styles from "@/components/pages/initialLayout/initialLayout.module.css"
-import Video from "next-video"
-import getStarted from "../../../../videos/get-started.mp4"
 import Button from "@/components/Button"
 
 export default function initialLayout() {
@@ -27,15 +25,27 @@ export default function initialLayout() {
 						tempo recorde e{" "}
 						<strong>lucrar muito com isso</strong>
 					</h2>
-					<div className={styles.videocontainer}>
-						<Video
-							className={styles.videocontainer}
-							src={getStarted}
-							controls={true}
-							style={{
-								height: "40vh",
-							}}
-						></Video>
+					{/* <div className={styles.videocontainer}>
+      <Video
+          className={styles.videocontainer}
+          src={getStarted}
+          controls={true}
+          style={{
+              height: "40vh",
+          }}
+      ></Video>
+  </div> */}
+					<div
+						className={styles.videocontainer}
+						style={{
+							height: "40vh",
+							width: "100%",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
+						<p>Em breve...</p>
 					</div>
 					<div className={styles.buttonWrapper}>
 						<Button variant="thirdary" onClick={handleClick}>

@@ -18,9 +18,9 @@ export const plans: Plan[] = [
 		icon: jampaOneIcon,
 		title: "Consulta e Reavaliação",
 		benefits: [
-			"Avaliação inicial completa",
-			"Plano nutricional personalizado",
-			"Acompanhamento quinzenal",
+			"2 Consultas, sendo a segunda apenas para reavaliação, pode esta ser marcada até 45 dias após a primeira consulta.",
+			"Elaboração do cardápio junto com o paciente.",
+			"Suporte whatsapp podendo levar até 48h para retorno.",
 		],
 		price: 100,
 		whatsappMessage:
@@ -31,9 +31,11 @@ export const plans: Plan[] = [
 		icon: jampaThreeIcon,
 		title: "Consultoria 3 meses",
 		benefits: [
-			"Todas vantagens do plano anterior",
-			"Acesso a comunidade exclusiva",
-			"Monitoramento semanal do cultivo",
+			"4 consultas (online)",
+			"Elaboração do cardápio junto com o paciente.",
+			"Suporte no whatsapp de 7h às 19h.",
+			"Alteração do cardápio sempre que o paciente solicitar.",
+			"Acompanhamento semanal via whatsapp",
 		],
 		price: 200,
 		whatsappMessage:
@@ -44,9 +46,12 @@ export const plans: Plan[] = [
 		icon: jampaTwoIcon,
 		title: "Consultoria 6 meses",
 		benefits: [
-			"Consultoria premium 24/7",
-			"Comigo você é bem mais feliz",
-			"Garantia de sucesso",
+			"7 consultas (online)",
+			"Elaboração do plano alimentar junto com o paciente",
+			"Alteração do plano alimentar sempre que o paciente solicitar",
+			"Suporte viia whatsapp de 7h às 19h.",
+			"Acompanhamento semanal via whatsapp.",
+			"Reeducação alimentar",
 		],
 		price: 300,
 		whatsappMessage:

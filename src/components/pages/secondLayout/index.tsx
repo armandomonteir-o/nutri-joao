@@ -21,7 +21,7 @@ export default function SecondLayout() {
 			},
 			{
 				threshold: 0.2,
-			}
+			},
 		)
 
 		if (firstCardRef.current) observer.observe(firstCardRef.current)
@@ -41,17 +41,17 @@ export default function SecondLayout() {
 					<h2>Quem sou eu?</h2>
 					<div className={styles.contentWrapper}>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur
-							adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua.
-							Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat. Duis aute irure
-							dolor in reprehenderit in voluptate velit
-							esse cillum dolore eu fugiat nulla pariatur.
-							Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt
-							mollit anim id est laborum.
+							Meu nome é João Paulo, sou nutricionista
+							formado pelo Centro Universitário de Barra
+							Mansa (UBM) e pós-graduando em Nutrição
+							Comportamental e Clínica pela Uniguaçu. Minha
+							missão na nutrição é transformar a relação
+							das pessoas com a alimentação, combatendo o
+							terrorismo nutricional que, muitas vezes,
+							contribui para o desenvolvimento de
+							transtornos alimentares e prejudica a relação
+							com a comida. Se quiser saber mais sobre mim,
+							clique no botão abaixo
 						</p>
 						<Image
 							src={JampaImage}
@@ -84,17 +84,21 @@ export default function SecondLayout() {
 							}}
 						/>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur
-							adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua.
-							Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat. Duis aute irure
-							dolor in reprehenderit in voluptate velit
-							esse cillum dolore eu fugiat nulla pariatur.
-							Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt
-							mollit anim id est laborum.
+							A SlimMind é um projeto que tem como missão
+							transformar vidas por meio da nutrição. Nosso
+							principal foco é o tratamento e a remissão de
+							transtornos alimentares, mas também
+							trabalhamos com hipertrofia e emagrecimento,
+							sempre respeitando a individualidade de cada
+							pessoa.
+							<br /> Mais do que um método a ser seguido, a
+							SlimMind representa um estilo de vida: uma
+							mudança de hábitos sustentáveis que permite
+							alcançar uma relação equilibrada com a
+							alimentação. Aqui, você encontrará o suporte
+							necessário para essa transformação.
+							<br /> Se deseja se tornar um parceiro da
+							SlimMind, clique no botão abaixo.
 						</p>
 					</div>
 					<Button variant="secondary">Conheça mais</Button>

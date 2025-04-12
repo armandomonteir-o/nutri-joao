@@ -17,14 +17,14 @@ export const feedback: feedback[] = [
 		avatar: "/images/avatarJampa.png",
 		name: "Mãe do jampa",
 		role: "Mãe dele",
-		text: "meu filho é um gênio!",
+		text: "Meu filho é um gênio!",
 	},
 	{
 		// Use o caminho público relativo à pasta 'public'
 		avatar: "/images/avatarGuilherme.webp",
 		name: "Guilherme Veroneze",
 		role: "Desenvolvedor",
-		text: "Graças ao nutricionista João Paulo, consegui perder cerca de 5kg em menos de um mês, além disso, o plano alimentar me ajudou a regular minha rotina, melhorando meu sono e me dando mais disposição durante a semana.",
+		text: "Graças ao nutricionista João Paulo, consegui perder cerca de 5kg em menos de um mês. Além disso, o plano alimentar me ajudou a regular minha rotina, melhorando meu sono e me dando mais disposição durante a semana.",
 	},
 	{
 		// Use o caminho público relativo à pasta 'public'

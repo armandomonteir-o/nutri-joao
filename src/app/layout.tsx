@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: "Dr. Jampa",
-	description: "Tenha resultados incríveis ",
+	description: "Tenha resultados incríveis",
 }
 
 const anton = Anton({

@@ -19,7 +19,7 @@ export default function initialLayout() {
 						width={150}
 						height={150}
 					></Image>
-					<h1>Jampa nutricionista</h1>
+					<h1>Jampa Nutricionista</h1>
 					<h2>
 						Aprenda as técnicas para viralizar seus reels em
 						tempo recorde e{" "}

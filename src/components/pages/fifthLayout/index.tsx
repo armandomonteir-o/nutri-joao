@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef } from "react"
 import styles from "@/components/pages/fifthLayout/fifthLayout.module.css"
-import { FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin } from "react-icons/fa"
+import { FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa"
 import { faq } from "@/constants/faq"
 
 export default function FifthLayout() {
@@ -49,13 +49,6 @@ export default function FifthLayout() {
 						rel="noopener noreferrer"
 					>
 						<FaWhatsapp size={32} />
-					</a>
-					<a
-						href="https://facebook.com"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaFacebook size={32} />
 					</a>
 					<a
 						href="https://linkedin.com"

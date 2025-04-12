@@ -17,7 +17,7 @@ export const faq = [
 	},
 	{
 		id: 3,
-		question: "Como você faz pra ser tão feio?",
-		answer: "Nasci assim, não posso fazer nada.",
+		question: "Aceita convênio?",
+		answer: "Ainda não aceitamos convênio, mas em breve teremos novidades!",
 	},
 ]

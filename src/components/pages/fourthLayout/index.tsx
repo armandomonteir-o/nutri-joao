@@ -47,15 +47,23 @@ export default function FourthLayout() {
 				<RatingAverage />
 
 				<p>
-					&ldquo;Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor
-					in reprehenderit in voluptate velit esse cillum dolore
-					eu fugiat nulla pariatur. Excepteur sint occaecat
-					cupidatat non proident, sunt in culpa qui officia
-					deserunt mollit anim id est laborum.&rdquo;
+					Você não precisa embarcar em &ldquo;mais uma
+					dieta&rdquo; restritiva e frustrante.
+				</p>
+				<p>
+					O que você realmente precisa é de um acompanhamento que
+					olhe para você como um todo: considerando sua mente,
+					sua rotina, suas emoções e seus objetivos de vida.
+				</p>
+				<p>
+					Consultar comigo é dar um passo em direção a uma vida
+					mais leve e equilibrada, onde a nutrição se torna parte
+					natural de quem você é, e não uma obrigação passageira.
+				</p>
+				<p>
+					Eu estarei ao seu lado em cada etapa desta jornada.
+					Alcançar seus resultados não é apenas meu trabalho, é a
+					minha missão.
 				</p>
 			</div>
 			<div className={styles.carouselWrapper}>

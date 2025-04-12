@@ -10,15 +10,15 @@ interface feedback {
 
 export const feedback = [
 	{
-		name: "Armando Monteiro",
-		role: "mlk do momento",
-		text: "Graças ao jampa eu engordei 20kg em 3 meses!",
+		name: "Guilherme Veroneze",
+		role: "Desenvolvedor",
+		text: "Graças ao nutricionista João Paulo, consegui perder cerca de 5kg em menos de um mês, além disso, o plano alimentar me ajudou a regular minha rotina, melhorando meu sono e me dando mais disposição durante a semana.",
 		avatar: weightIcon,
 	},
 	{
-		name: "The Weeknd",
-		role: "melhor artista do mundo",
-		text: "graças ao Jampa eu lancei meu novo álbum!",
+		name: "Susana Machado",
+		role: "Vendedora",
+		text: "Conheci meu nutricionista no Instagram, comecei a seguir, e vi o trabalho dele., Eu não estava bem, acima do peso, e triste. o meu nutri não só me ajudou a ter uma alimentação saudável, incentivou a malhar e cuidar da mente... Meu nutri, é completo 🌻 indico sem medo.",
 		avatar: weightIcon,
 	},
 	{

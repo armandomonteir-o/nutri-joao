@@ -21,7 +21,7 @@ export default function SecondLayout() {
 			},
 			{
 				threshold: 0.2,
-			},
+			}
 		)
 
 		if (firstCardRef.current) observer.observe(firstCardRef.current)
@@ -51,7 +51,7 @@ export default function SecondLayout() {
 							contribui para o desenvolvimento de
 							transtornos alimentares e prejudica a relação
 							com a comida. Se quiser saber mais sobre mim,
-							clique no botão abaixo
+							clique no botão abaixo.
 						</p>
 						<Image
 							src={JampaImage}

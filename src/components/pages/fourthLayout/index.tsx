@@ -9,28 +9,22 @@ import "react-alice-carousel/lib/alice-carousel.css"
 import RatingAverage from "@/components/RatingAverage"
 
 export default function FourthLayout() {
-	const responsive = {
-		0: { items: 1 },
-		768: { items: 2 },
-		1024: { items: 3 },
-	}
-
-	const [isClient, setIsClient] = useState(false)
+	const [isMounted, setIsMounted] = useState(false)
 
 	useEffect(() => {
-		setIsClient(true)
+		setIsMounted(true)
 	}, [])
 
-	// Prepara os itens do carrossel
 	const carouselItems = feedback.map((item, index) => (
 		<div key={index} className={styles.carouselItem}>
 			<div className={styles.feedbackCard}>
 				<Image
 					src={item.avatar}
 					alt={item.name}
-					width={120}
-					height={120}
+					width={100}
+					height={100}
 					className={styles.avatar}
+					priority={index < 3}
 				/>
 				<h3 className={styles.clientName}>{item.name}</h3>
 				<p className={styles.clientRole}>{item.role}</p>
@@ -38,6 +32,12 @@ export default function FourthLayout() {
 			</div>
 		</div>
 	))
+
+	const responsive = {
+		0: { items: 1, itemsFit: "contain" },
+		768: { items: 2, itemsFit: "contain" },
+		1024: { items: 3, itemsFit: "contain" },
+	}
 
 	return (
 		<div className={styles.container}>
@@ -67,16 +67,17 @@ export default function FourthLayout() {
 				</p>
 			</div>
 			<div className={styles.carouselWrapper}>
-				{isClient ? (
+				{isMounted ? (
 					<AliceCarousel
 						mouseTracking
+						items={carouselItems}
+						responsive={responsive}
+						controlsStrategy="alternate"
+						disableDotsControls
 						infinite
 						autoPlay
-						autoPlayInterval={3000}
+						autoPlayInterval={4000}
 						animationDuration={800}
-						disableDotsControls
-						responsive={responsive}
-						items={carouselItems}
 					/>
 				) : (
 					<div className={styles.loadingCarousel}>

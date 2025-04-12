@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 import styles from "@/components/pages/secondLayout/secondLayout.module.css"
 import slimMindLogo from "../../../../public/images/slimmindlogo.webp"
 import Image from "next/image"
-import JampaImage from "../../../../public/images/jampo.png"
+import JampaImage from "../../../../public/images/jampaQuemSouEu.webp"
 import Button from "@/components/Button"
 import {
 	contactMessages,
@@ -66,28 +66,34 @@ export default function SecondLayout() {
 							Meu nome é João Paulo, sou nutricionista
 							formado pelo Centro Universitário de Barra
 							Mansa (UBM) e pós-graduando em Nutrição
-							Comportamental e Clínica pela Uniguaçu. Minha
-							missão na nutrição é transformar a relação
-							das pessoas com a alimentação, combatendo o
-							terrorismo nutricional que, muitas vezes,
-							contribui para o desenvolvimento de
-							transtornos alimentares e prejudica a relação
-							com a comida. Se quiser saber mais sobre mim,
-							clique no botão abaixo.
+							Comportamental e Clínica pela Uniguaçu. Com
+							experiência na área, minha missão na nutrição
+							é transformar a relação das pessoas com a
+							alimentação, combatendo o terrorismo
+							nutricional que, muitas vezes, contribui para
+							o desenvolvimento de transtornos alimentares
+							e prejudica a relação com a comida. Acredito
+							em uma abordagem que respeita as
+							individualidades. Se quiser saber mais sobre
+							mim e minha metodologia de trabalho, clique
+							no botão abaixo.
 						</p>
-						<Image
-							src={JampaImage}
-							alt="Psicólogo João Paulo"
-							width={350}
-							height={350}
-							className={styles.responsiveImage}
-							style={{
-								borderRadius: "12px",
-							}}
-						/>
+						<div className={styles.jampaImageContainer}>
+							<Image
+								src={JampaImage}
+								alt="Nutricionista João Paulo"
+								width={450}
+								height={450}
+								className={`${styles.responsiveImage} ${styles.jampaImageZoom}`}
+								style={{
+									borderRadius: "12px",
+								}}
+							/>
+						</div>
 					</div>
 					<Button
 						onClick={() => openWhatsApp(entreEmContatoMsg)}
+						className={styles.firstCardButton}
 					>
 						Entre em contato
 					</Button>

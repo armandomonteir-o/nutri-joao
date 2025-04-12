@@ -37,7 +37,7 @@ export default function FifthLayout() {
 				<h2>Entre em contato comigo nas minhas redes sociais</h2>
 				<div className={styles.socialLinks}>
 					<a
-						href="https://instagram.com"
+						href="https://instagram.com/nutrijoaogarcia"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -51,7 +51,7 @@ export default function FifthLayout() {
 						<FaWhatsapp size={32} />
 					</a>
 					<a
-						href="https://linkedin.com"
+						href="https://www.linkedin.com/in/jo%C3%A3o-garcia-a78018240/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

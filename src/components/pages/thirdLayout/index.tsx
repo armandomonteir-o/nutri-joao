@@ -21,14 +21,14 @@ export default function ThirdLayout() {
 						) {
 							const benefitItems =
 								entry.target.querySelectorAll(
-									`.${styles.benefitItem}`,
+									`.${styles.benefitItem}`
 								)
 							benefitItems.forEach((item) => {
 								item.classList.add(styles.visible)
 							})
 							setTimeout(() => {
 								entry.target.classList.add(
-									styles.visible,
+									styles.visible
 								)
 							}, 100)
 						}
@@ -37,20 +37,20 @@ export default function ThirdLayout() {
 			},
 			{
 				threshold: 0.1,
-			},
+			}
 		)
 
 		if (h2Ref.current) observer.observe(h2Ref.current)
 		cardsRef.current.forEach((card) => card && observer.observe(card))
 		benefitItemsRef.current.forEach(
-			(item) => item && observer.observe(item),
+			(item) => item && observer.observe(item)
 		)
 
 		return () => observer.disconnect()
 	}, [])
 
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} third-layout-section`}>
 			<h2 ref={h2Ref}>CONFIRA OS PLANOS</h2>
 
 			{plans.map((plan, index) => (
@@ -66,19 +66,41 @@ export default function ThirdLayout() {
 						}}
 					>
 						<div
-							className={`${styles.contentWrapper} ${index === 1 ? styles.contentWrapperReversed : ""}`}
+							className={`${styles.contentWrapper} ${
+								index === 1
+									? styles.contentWrapperReversed
+									: ""
+							}`}
 						>
 							{/* Container da imagem */}
 							<div
-								className={`${styles.imageSection} ${index === 1 ? styles.imageSectionSecond : index === 2 ? styles.imageSectionThird : ""}`}
+								className={`${styles.imageSection} ${
+									index === 1
+										? styles.imageSectionSecond
+										: index === 2
+										? styles.imageSectionThird
+										: ""
+								}`}
 							>
 								<div
 									className={`${styles.iconContainer}
-        ${index === 1 ? styles.iconContainerSecond : index === 2 ? styles.iconContainerThird : ""}`}
+        ${
+			index === 1
+				? styles.iconContainerSecond
+				: index === 2
+				? styles.iconContainerThird
+				: ""
+		}`}
 								>
 									<Image
 										className={`${styles.icon}
-                ${index === 1 ? styles.iconSecond : index === 2 ? styles.iconThird : ""}`}
+                ${
+					index === 1
+						? styles.iconSecond
+						: index === 2
+						? styles.iconThird
+						: ""
+				}`}
 										src={plan.icon.src}
 										alt={plan.title}
 										width={500}
@@ -124,14 +146,14 @@ export default function ThirdLayout() {
 													{benefit}
 												</span>
 											</div>
-										),
+										)
 									)}
 								</div>
 
 								<footer className={styles.cardFooter}>
 									<a
 										href={`https://wa.me/5524998416823?text=${encodeURIComponent(
-											plan.whatsappMessage,
+											plan.whatsappMessage
 										)}`}
 										className={
 											styles.whatsappButton

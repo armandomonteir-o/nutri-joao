@@ -5,6 +5,10 @@ import slimMindLogo from "../../../../public/images/slimmindlogo.webp"
 import Image from "next/image"
 import JampaImage from "../../../../public/images/jampo.png"
 import Button from "@/components/Button"
+import {
+	contactMessages,
+	generateWhatsAppLink,
+} from "@/constants/contactMessages"
 
 export default function SecondLayout() {
 	const firstCardRef = useRef(null)
@@ -29,6 +33,24 @@ export default function SecondLayout() {
 
 		return () => observer.disconnect()
 	}, [])
+
+	// Encontra as mensagens específicas pelo ID
+	const conhecaMaisMsg = contactMessages.find(
+		(msg) => msg.id === "conheca-mais"
+	)?.message
+	const entreEmContatoMsg = contactMessages.find(
+		(msg) => msg.id === "entre-em-contato"
+	)?.message
+
+	// Função para abrir o link do WhatsApp em nova aba
+	const openWhatsApp = (message?: string) => {
+		if (!message) {
+			console.error("Mensagem do WhatsApp não encontrada!")
+			return
+		}
+		const link = generateWhatsAppLink(message)
+		window.open(link, "_blank", "noopener,noreferrer")
+	}
 
 	return (
 		<>
@@ -64,7 +86,11 @@ export default function SecondLayout() {
 							}}
 						/>
 					</div>
-					<Button>Entre em contato</Button>
+					<Button
+						onClick={() => openWhatsApp(entreEmContatoMsg)}
+					>
+						Entre em contato
+					</Button>
 				</div>
 
 				<div
@@ -101,7 +127,12 @@ export default function SecondLayout() {
 							SlimMind, clique no botão abaixo.
 						</p>
 					</div>
-					<Button variant="secondary">Conheça mais</Button>
+					<Button
+						variant="secondary"
+						onClick={() => openWhatsApp(conhecaMaisMsg)}
+					>
+						Conheça mais
+					</Button>
 				</div>
 			</div>
 		</>

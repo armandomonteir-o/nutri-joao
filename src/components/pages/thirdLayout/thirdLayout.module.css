@@ -17,10 +17,8 @@
 	transform: scale(0);
 	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	color: var(--secondary-bg);
-	text-shadow:
-		2px 2px 4px rgba(255, 255, 255, 0.1),
-		0 0 20px rgba(216, 217, 224, 0.3),
-		0 0 40px rgba(60, 71, 186, 0.2),
+	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1),
+		0 0 20px rgba(216, 217, 224, 0.3), 0 0 40px rgba(60, 71, 186, 0.2),
 		0 0 60px rgba(60, 71, 186, 0.1);
 	letter-spacing: 0.05em;
 	background: linear-gradient(145deg, var(--secondary-bg), #f5f5f6);
@@ -29,233 +27,202 @@
 }
 
 .container h2.visible {
-	animation:
-		basicPop 0.8s forwards,
-		float 1s ease-in-out infinite 0.4s;
+	animation: basicPop 0.8s forwards, float 1s ease-in-out infinite 0.4s;
 }
 
 .card {
 	display: flex;
-	flex-direction: column;
-	width: 70%;
+	width: 80%;
 	background: var(--secondary-bg);
-	padding: 2.5rem;
+	padding: 1.5rem 1.5rem 0 1.5rem;
 	border-radius: 20px;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-	transform: translate3d(0, 20px, 0) scale(0.95);
-	opacity: 0;
 	will-change: transform, opacity;
-	backface-visibility: hidden;
-	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-	min-height: 60vh;
+	min-height: 70vh;
 	align-self: center;
+	overflow: hidden;
+	position: relative;
+	opacity: 0;
+	transform: translateY(30px) scale(0.98);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .card.visible {
-	animation:
-		fadeIn 0.4s ease 0.3s forwards,
-		scaleIn 0.4s ease 0.3s forwards,
-		float 3s ease-in-out infinite 0.7s;
-}
-
-.card:nth-child(2).visible {
-	animation-delay: 0.5s, 0.5s, 0.9s;
-}
-
-.card:nth-child(3).visible {
-	animation-delay: 0.7s, 0.7s, 1.1s;
+	opacity: 1;
+	transform: translateY(0) scale(1);
 }
 
 .contentWrapper {
 	display: flex;
-	align-items: center;
-	flex-direction: row;
-	gap: 2rem;
+	flex-direction: inherit;
+	align-items: stretch;
+	gap: 1.5rem;
 	width: 100%;
 	height: 100%;
 	position: relative;
 }
 
-.contentWrapperReversed {
-	flex-direction: row-reverse;
-}
-
 .imageSection {
-	flex: 1;
-	align-self: flex-start;
-	min-width: 40%;
+	flex: 0 0 48%;
 	display: flex;
-	margin: 0;
-	padding: 0.1rem;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
 	position: relative;
-	max-height: 500px;
-	margin-top: -49px;
+	padding: 0;
+	overflow: visible;
+	height: 100%;
 }
 
 .iconContainer {
 	width: 100%;
+	max-width: 400px;
 	display: flex;
-	position: relative;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
 	overflow: visible;
-	max-height: 500px;
+}
+
+/* Estilos BASE para TODOS os ícones */
+.icon,
+.iconSecond,
+.iconThird {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	transition: transform 0.4s ease;
+	transform-origin: center bottom;
 }
 
 .icon {
-	max-width: 100%;
-	max-height: 300px;
-	object-fit: contain;
-	transition: transform 0.3s ease;
-	transform: scale(2.3);
+	transform: scale(1.6);
 }
 
-/* Estilos específicos para o segundo card */
-.imageSectionSecond {
-	/* Customizações específicas para o segundo card */
-	margin-top: 50px;
-	margin-right: 29px;
-}
-
-.iconContainerSecond {
+.card:hover .icon {
+	transform: scale(1.65);
 }
 
 .iconSecond {
-	transform: scale(1.5); /* exemplo */
+	transform: scale(1.2);
 }
 
-/* Estilos específicos para o terceiro card */
-.imageSectionThird {
-	margin-top: -4px;
-	margin-left:;
-	/* Customizações específicas para o terceiro card */
-}
-
-.iconContainerThird {
+.card:hover .iconSecond {
+	transform: scale(1.25);
 }
 
 .iconThird {
-	transform: scale(2);
-	/* Customizações específicas */
+	transform: scale(1.2);
+}
+
+.card:hover .iconThird {
+	transform: scale(1.25);
 }
 
 .textSection {
-	flex: 2;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
-	max-width: 60%;
-	padding-left: 2rem;
 	justify-content: center;
+	padding: 1.5rem 2rem 1.5rem 2rem;
+	color: var(--primary-bg);
+	z-index: 1;
 }
 
 .cardHeader {
-	margin-bottom: 2rem;
-	width: fit-content;
+	margin-bottom: 1.5rem;
 }
 
 .cardHeader h3 {
-	font-size: 2rem;
+	font-size: 2.2rem;
 	color: var(--primary-bg);
-	letter-spacing: -0.05em;
+	letter-spacing: -0.03em;
+	font-weight: 700;
 }
 
 .benefitsGrid {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
-	padding-left: 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	padding-left: 0;
 	width: 100%;
-	max-width: 600px;
-	position: relative; /* Adicionado */
-	overflow: hidden; /* Adicionado */
+	margin: 1.5rem 0;
 }
 
 .benefitItem {
-	opacity: 0;
-	overflow: hidden;
-	position: relative;
-	width: 0;
-	white-space: nowrap; /* Alterado de pre-wrap para nowrap */
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
 	color: var(--primary-bg);
-	font-weight: 600;
-	line-height: 1.2;
-	font-size: 1rem;
-	padding: 0.5rem 0;
+	font-weight: 500;
+	line-height: 1.6;
+	font-size: 1.1rem;
 	text-align: left;
-	height: 2em; /* Altura fixa */
-	margin: 0; /* Reset margin */
-	transform-origin: left;
+	opacity: 0;
+	transform: translateX(-15px);
+	transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
-.card.visible .benefitItem.visible {
-	animation:
-		typing 2s steps(40, end) forwards,
-		fadeIn 0.1s ease forwards;
-	width: 100%;
-	height: auto; /* Permite altura automática após a animação */
-	white-space: normal; /* Permite quebra de linha após a animação */
-	transition: height 0.3s ease; /* Suaviza a transição de altura */
+.card.visible .benefitItem:nth-child(1) {
+	transition-delay: 0.3s;
+}
+.card.visible .benefitItem:nth-child(2) {
+	transition-delay: 0.4s;
+}
+.card.visible .benefitItem:nth-child(3) {
+	transition-delay: 0.5s;
+}
+.card.visible .benefitItem:nth-child(4) {
+	transition-delay: 0.6s;
+}
+.card.visible .benefitItem:nth-child(5) {
+	transition-delay: 0.7s;
 }
 
-.card.visible .benefitItem.visible::after {
-	content: "|";
-	position: absolute;
-	right: -5px;
-	top: 0;
-	animation:
-		blink 0.7s infinite 1.8s,
-		cursorMove 2s steps(40, end) forwards;
+.card.visible .benefitItem {
+	opacity: 1;
+	transform: translateX(0);
 }
 
-/* Delay para itens */
-.card.visible .benefitItem.visible:nth-child(1) {
-	animation-delay: 0.3s;
+.checkIcon {
+	color: #3c47ba;
+	font-weight: bold;
+	font-size: 1.2em;
+	flex-shrink: 0;
 }
-.card.visible .benefitItem.visible:nth-child(2) {
-	animation-delay: 0.6s;
-}
-.card.visible .benefitItem.visible:nth-child(3) {
-	animation-delay: 0.9s;
+
+.benefitText {
+	/* Estilos para o texto do benefício */
 }
 
 .cardFooter {
-	margin-top: 2rem;
-	display: flex;
-	width: 100%;
 	margin-top: auto;
 	padding-top: 2rem;
+	display: flex;
+	width: 100%;
 }
 
 .whatsappButton {
 	background: linear-gradient(135deg, #25d366, #128c7e);
 	color: white;
-	padding: 0.75rem 1.5rem;
-	border-radius: 1.875rem;
-	font-size: 1.1rem;
+	padding: 0.8rem 1.8rem;
+	border-radius: 50px;
+	font-size: 1rem;
+	font-weight: 600;
 	transition: all 0.3s ease;
-	width: max-content;
 	display: inline-block;
-	transform: translateY(0);
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .whatsappButton:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-	transition-delay: 0.08s;
+	transform: translateY(-3px) scale(1.03);
+	box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-/* Delays */
-.card.visible .benefitItem:nth-child(1) {
-	animation-delay: 0.3s;
-}
-.card.visible .benefitItem:nth-child(2) {
-	animation-delay: 0.6s;
-}
-.card.visible .benefitItem:nth-child(3) {
-	animation-delay: 0.9s;
-}
-
-/* Responsivo */
 @media screen and (max-width: 1200px) {
 	.container {
 		width: 90%;
@@ -323,55 +290,85 @@
 	}
 
 	.card {
-		width: 100%;
+		flex-direction: column !important;
+		width: 95%;
 		padding: 1.5rem;
 		min-height: auto;
 	}
 
 	.contentWrapper {
-		flex-direction: column;
+		flex-direction: column !important;
 		align-items: center;
 		gap: 2rem;
 	}
 
 	.imageSection {
-		max-width: 100%;
-		min-height: 250px;
-		padding: 1rem 2rem;
+		order: 1;
+		flex-basis: auto;
+		width: 80%;
+		max-width: 300px;
+		min-height: 280px;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem 0;
+		overflow: hidden;
+		height: auto;
 	}
 
-	.icon {
-		max-height: 300px;
+	.iconContainer {
+		max-width: 100%;
+		height: 100%;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.icon,
+	.iconSecond,
+	.iconThird {
+		max-height: 250px;
+		transform: scale(1);
+	}
+
+	.card:hover .icon,
+	.card:hover .iconSecond,
+	.card:hover .iconThird {
+		transform: scale(1.05);
 	}
 
 	.textSection {
-		max-width: 100%;
-		padding-left: 0;
+		order: 2;
+		width: 100%;
+		padding: 1rem;
 		align-items: center;
 		text-align: center;
 	}
 
-	.iconContainer {
-		transform: scale(1.1);
-		margin-top: 0;
-	}
-
-	.benefitItem {
-		white-space: normal; /* Permite quebra automática em telas menores */
-		width: 100%;
-		font-size: 0.9rem;
-		padding: 0.3rem 0;
+	.cardHeader h3 {
+		font-size: 1.8rem;
 	}
 
 	.benefitsGrid {
 		padding-left: 0;
-		align-items: flex-start;
+		align-self: stretch;
+		gap: 0.8rem;
+	}
+
+	.benefitItem {
+		font-size: 1rem;
+		justify-content: center;
+		text-align: left;
+	}
+
+	.cardFooter {
+		justify-content: center;
+		margin-top: 1.5rem;
 	}
 
 	.whatsappButton {
-		width: 100%;
-		max-width: 250px;
-		text-align: center;
+		width: 80%;
+		max-width: 280px;
+		font-size: 0.95rem;
+		padding: 0.7rem 1.5rem;
 	}
 }
 
@@ -463,75 +460,20 @@
 	}
 }
 
-@keyframes scaleIn {
-	to {
-		transform: translate3d(0, 0, 0) scale(1);
-	}
-}
-
-@keyframes basicPop {
-	0% {
-		opacity: 0;
-		transform: scale(0);
-		filter: brightness(0);
-	}
-	80% {
-		transform: scale(1.1);
-		filter: brightness(1.5);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1);
-		filter: brightness(1);
-	}
-}
-
 @keyframes float {
 	0% {
 		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(-10px);
+		transform: translateY(-8px);
 	}
 	100% {
 		transform: translateY(0px);
-	}
-}
-
-@keyframes typing {
-	from {
-		width: 0;
-		height: 2em;
-		white-space: nowrap;
-	}
-	to {
-		width: 100%;
-		height: auto;
-		white-space: normal;
 	}
 }
 
 @keyframes fadeIn {
 	to {
 		opacity: 1;
-	}
-}
-
-@keyframes blink {
-	0%,
-	100% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-}
-
-@keyframes cursorMove {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(100%);
 	}
 }

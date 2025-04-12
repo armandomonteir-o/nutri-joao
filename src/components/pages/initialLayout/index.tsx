@@ -19,11 +19,9 @@ export default function initialLayout() {
 						width={150}
 						height={150}
 					></Image>
-					<h1>Jampa Nutricionista</h1>
+					<h1>Nutricionista - João Paulo</h1>
 					<h2>
-						Aprenda as técnicas para viralizar seus reels em
-						tempo recorde e{" "}
-						<strong>lucrar muito com isso</strong>
+						Bem vindo ao primeiro passo da sua grande mudança.
 					</h2>
 					{/* <div className={styles.videocontainer}>
       <Video
@@ -48,10 +46,14 @@ export default function initialLayout() {
 						<p>Em breve...</p>
 					</div>
 					<div className={styles.buttonWrapper}>
-						<Button variant="thirdary" onClick={handleClick}>
+						<Button
+							variant="thirdary"
+							onClick={handleClick}
+							scrollTo="third-layout-section"
+						>
 							Quero consultar
 						</Button>
-						<p>Por menos de 10 reais por dia.</p>
+						<p>Consultoria por menos de R$120,00 por mês!</p>
 					</div>
 				</div>
 			</div>

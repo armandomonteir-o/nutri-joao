@@ -15,9 +15,9 @@ export const feedback: feedback[] = [
 	{
 		// Use o caminho público relativo à pasta 'public'
 		avatar: "/images/avatarJampa.png",
-		name: "Mãe do jampa",
-		role: "Mãe dele",
-		text: "Meu filho é um gênio!",
+		name: "Armando Monteiro",
+		role: "Desenvolvedor",
+		text: "O João é um nutricionista excepcional que transformou minha vida. Seu acompanhamento é constante e atencioso, sempre disponível para tirar dúvidas e fazer ajustes no plano quando necessário. Com sua ajuda, não só alcancei meus objetivos, mas também aprendi a ter uma relação mais saudável com a alimentação.",
 	},
 	{
 		// Use o caminho público relativo à pasta 'public'

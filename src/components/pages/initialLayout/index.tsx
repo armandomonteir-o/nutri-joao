@@ -3,6 +3,9 @@ import Image from "next/image"
 import slimMindLogo from "../../../../public/images/slimmindwhitelogo.webp"
 import styles from "@/components/pages/initialLayout/initialLayout.module.css"
 import Button from "@/components/Button"
+import Video from "next-video"
+
+
 
 export default function initialLayout() {
 	const handleClick = () => {
@@ -23,27 +26,15 @@ export default function initialLayout() {
 					<h2>
 						Bem vindo ao primeiro passo da sua grande mudança.
 					</h2>
-					{/* <div className={styles.videocontainer}>
-      <Video
-          className={styles.videocontainer}
-          src={getStarted}
-          controls={true}
-          style={{
-              height: "40vh",
-          }}
-      ></Video>
-  </div> */}
-					<div
-						className={styles.videocontainer}
-						style={{
-							height: "40vh",
-							width: "100%",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					>
-						<p>Em breve...</p>
+					<div className={styles.videocontainer}>
+						<Video
+							className={styles.videocontainer}
+							src="https://stream.mux.com/PNal02O01amnHs5iSphe3xDGMygKjBZ0201JfxENzCy6C4w.m3u8"
+							controls={true}
+							style={{
+								height: "40vh",
+							}}
+						></Video>
 					</div>
 					<div className={styles.buttonWrapper}>
 						<Button

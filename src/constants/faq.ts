@@ -20,4 +20,9 @@ export const faq = [
 		question: "Aceita convênio?",
 		answer: "Ainda não aceitamos convênio, mas em breve teremos novidades!",
 	},
+	{
+		id: 4,
+		question: "Como funciona a contratação dos planos?",
+		answer: "Qualquer plano que você fechar comigo é firmado por meio de contrato, sendo assinado de forma digital.",
+	},
 ]

@@ -155,10 +155,12 @@
 	}
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
 	.ratingContainer {
 		padding: 20px 24px;
-		margin: 2rem 0;
+		margin: 2rem auto;
+		max-width: 90%;
 	}
 
 	.ratingValue {
@@ -172,5 +174,123 @@
 	.message {
 		font-size: 1rem;
 		padding: 1rem;
+	}
+}
+
+/* iPad Mini specific */
+@media screen and (min-width: 768px) and (max-width: 769px) {
+	.ratingContainer {
+		padding: 25px 30px;
+		margin: 2.5rem auto;
+		max-width: 80%;
+		width: 80%;
+	}
+
+	.ratingStars {
+		margin-bottom: 15px;
+	}
+
+	.star {
+		margin: 0 6px;
+		transform: scale(1.1);
+	}
+
+	.star:hover {
+		transform: scale(1.3);
+	}
+
+	.ratingValue {
+		font-size: 3.2rem;
+	}
+
+	.ratingCount {
+		font-size: 1.4rem;
+		opacity: 0.9;
+	}
+
+	.message {
+		font-size: 1.3rem;
+		padding: 1.2rem;
+	}
+}
+
+/* iPad Pro specific */
+@media screen and (min-width: 1020px) and (max-width: 1030px) {
+	.ratingContainer {
+		padding: 28px 32px;
+		margin: 2rem auto;
+		max-width: 75%;
+		width: 75%;
+	}
+
+	.ratingStars {
+		margin-bottom: 15px;
+	}
+
+	.star {
+		margin: 0 7px;
+		transform: scale(1.15);
+	}
+
+	.star:hover {
+		transform: scale(1.35);
+	}
+
+	.ratingValue {
+		font-size: 3.5rem;
+	}
+
+	.ratingCount {
+		font-size: 1.5rem;
+		opacity: 0.9;
+	}
+
+	.message {
+		font-size: 1.5rem;
+		padding: 1.3rem;
+	}
+}
+
+/* iPhone 14 Pro, iPhone 14 Pro Max, and other large phones */
+@media screen and (min-width: 390px) and (max-width: 430px) {
+	.ratingContainer {
+		padding: 22px 26px;
+		margin: 2rem auto;
+		max-width: 85%;
+		width: 85%;
+	}
+
+	.ratingStars {
+		margin-bottom: 10px;
+	}
+
+	.star {
+		margin: 0 5px;
+	}
+
+	.ratingValue {
+		font-size: 2.4rem;
+	}
+
+	.ratingCount {
+		font-size: 1.1rem;
+		opacity: 0.9;
+	}
+}
+
+/* Small phones like iPhone SE */
+@media screen and (max-width: 375px) {
+	.ratingContainer {
+		padding: 18px 20px;
+		margin: 1.5rem auto;
+		max-width: 90%;
+	}
+
+	.ratingValue {
+		font-size: 2rem;
+	}
+
+	.ratingCount {
+		font-size: 0.9rem;
 	}
 }

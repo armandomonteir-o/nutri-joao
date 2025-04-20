@@ -4,8 +4,7 @@ import slimMindLogo from "../../../../public/images/slimmindwhitelogo.webp"
 import styles from "@/components/pages/initialLayout/initialLayout.module.css"
 import Button from "@/components/Button"
 import Video from "next-video"
-
-
+import JoaoVideo from "../../../../videos/joao-paulo-video.mp4"
 
 export default function initialLayout() {
 	const handleClick = () => {
@@ -29,11 +28,8 @@ export default function initialLayout() {
 					<div className={styles.videocontainer}>
 						<Video
 							className={styles.videocontainer}
-							src="https://stream.mux.com/PNal02O01amnHs5iSphe3xDGMygKjBZ0201JfxENzCy6C4w.m3u8"
+							src={JoaoVideo}
 							controls={true}
-							style={{
-								height: "40vh",
-							}}
 						></Video>
 					</div>
 					<div className={styles.buttonWrapper}>

@@ -128,7 +128,8 @@
 }
 
 .left .responsiveImage:not(.jampaImageZoom) {
-	margin-right: 10px;
+	margin-right: 12px;
+	margin-left: 25px;
 	flex-shrink: 0;
 	max-width: 350px;
 	height: auto;
@@ -174,7 +175,7 @@
 	.jampaImageContainer {
 		height: 580px;
 		margin-top: -65px; /* Ajustado proporcionalmente às alterações do iPhone SE */
-		margin-bottom: -93px; /* Ajustado proporcionalmente */
+		margin-bottom: -118px; /* Ajustado proporcionalmente */
 	}
 
 	.jampaImageZoom {
@@ -182,7 +183,7 @@
 	}
 
 	.firstCardButton {
-		margin-top: 20px; /* Aumentado o margin-top do botão conforme solicitado */
+		margin-top: 40px; /* Aumentado o margin-top do botão conforme solicitado */
 	}
 }
 

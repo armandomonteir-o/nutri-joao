@@ -30,6 +30,9 @@ export default function initialLayout() {
 							className={styles.videocontainer}
 							src={JoaoVideo}
 							controls={true}
+							poster="https://image.mux.com/NYOwxRhlTEMW27Ux1ovaNzoqCq0192SIH7i1262baM02k/thumbnail.png?time=176&width=800"
+							preload="none"
+							autoPlay={false}
 						></Video>
 					</div>
 					<div className={styles.buttonWrapper}>

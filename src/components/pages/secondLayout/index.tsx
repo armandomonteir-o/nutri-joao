@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 import styles from "@/components/pages/secondLayout/secondLayout.module.css"
 import slimMindLogo from "../../../../public/images/slimmindlogo.webp"
 import Image from "next/image"
-import JampaImage from "../../../../public/images/jampaQuemSouEu.webp"
+import JampaImage from "../../../../public/images/joao-who-am-i.webp"
 import Button from "@/components/Button"
 import {
 	contactMessages,

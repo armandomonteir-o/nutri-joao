@@ -5,6 +5,7 @@
 	align-items: center;
 	gap: 4rem;
 	padding: 2rem;
+	margin-left: 6vh;
 }
 
 .faqContainer {
@@ -206,6 +207,18 @@
 	.faqAnswer {
 		font-size: 1rem;
 		padding-left: 0.3rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		margin-left: 0;
 	}
 }
 

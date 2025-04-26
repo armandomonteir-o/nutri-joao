@@ -39,11 +39,26 @@
 	overflow: hidden;
 }
 
+/* Estilos globais para carrossel */
+.carouselWrapper :global(.alice-carousel), 
+.carouselWrapper :global(.alice-carousel__wrapper),
+.carouselWrapper :global(.alice-carousel__stage-item) {
+	user-select: none !important;
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	touch-action: pan-y !important;
+}
+
 .carouselItem {
 	display: flex;
 	align-items: stretch;
 	padding: 0 15px;
 	padding-bottom: 15px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .feedbackCard {
@@ -65,6 +80,11 @@
 	z-index: 1;
 	overflow: hidden;
 	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	touch-action: pan-y;
 }
 
 .carouselWrapper:hover .feedbackCard {
@@ -90,6 +110,10 @@
 	color: var(--secondary-bg);
 	margin-bottom: 0.5rem;
 	flex-shrink: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .clientRole {
@@ -98,6 +122,10 @@
 	font-size: 0.95rem;
 	margin-bottom: 1.5rem;
 	flex-shrink: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .feedbackText {
@@ -111,6 +139,10 @@
 	text-align: center;
 	transition: overflow 0s linear 0.6s, letter-spacing 0.4s ease-in-out 0.1s;
 	letter-spacing: normal;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .carouselWrapper:hover .feedbackCard .feedbackText {
@@ -296,44 +328,53 @@
 	}
 }
 
-/* Tablet responsiveness */
-/* iPad Air specific */
-@media screen and (min-width: 820px) and (max-width: 834px) {
+/* Media queries específicos para iPad Pro */
+@media (min-width: 1024px) and (max-width: 1366px) {
 	.container {
-		width: 90%;
-		margin: 0 auto;
-		padding: 2rem 0;
-		gap: 40px;
-	}
-
-	.whyConsultWrapper {
-		max-width: 700px;
-	}
-
-	.whyConsultWrapper h2 {
-		font-size: 2.5rem;
-		margin-bottom: 1.5rem;
+		width: 95%;
+		gap: 50px;
+		margin-left: 2.5%;
+		padding: 3rem 0;
 	}
 
 	.carouselItem {
-		padding: 0 10px;
-		padding-bottom: 10px;
+		padding: 0 12px;
 	}
 
 	.feedbackCard {
 		padding: 2rem;
 		height: 380px;
 		max-height: 380px;
+		width: 98%;
+		margin: 0 auto;
 	}
 
 	.carouselWrapper:hover .feedbackCard {
-		height: 600px;
-		max-height: 600px;
+		height: 560px;
+		max-height: 560px;
+	}
+
+	.feedbackText {
+		font-size: 1.05rem;
+		margin-top: 1rem;
+	}
+
+	.clientName {
+		font-size: 1.4rem;
+	}
+
+	.clientRole {
+		margin-bottom: 1rem;
+	}
+
+	.carouselWrapper :global(.alice-carousel__prev-btn),
+	.carouselWrapper :global(.alice-carousel__next-btn) {
+		display: none;  /* Oculta os botões de navegação em dispositivos touch */
 	}
 }
 
-/* iPad Pro specific */
-@media screen and (min-width: 1020px) and (max-width: 1030px) {
+/* iPad Pro 11 polegadas específico */
+@media (min-width: 1020px) and (max-width: 1030px) {
 	.container {
 		width: 95%;
 		margin: 0 auto;
@@ -393,6 +434,115 @@
 
 	.feedbackText {
 		font-size: 1.35rem;
+		line-height: 1.6;
+	}
+}
+
+/* Tablet responsiveness */
+/* iPad Air specific */
+@media screen and (min-width: 820px) and (max-width: 834px) {
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		padding: 2rem 0;
+		gap: 40px;
+	}
+
+	.whyConsultWrapper {
+		max-width: 700px;
+	}
+
+	.whyConsultWrapper h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.whyConsultWrapper p {
+		font-size: 1.25rem;
+		line-height: 1.7;
+	}
+
+	.carouselItem {
+		padding: 0 10px;
+		padding-bottom: 10px;
+	}
+
+	.feedbackCard {
+		padding: 2rem;
+		height: 380px;
+		max-height: 380px;
+	}
+
+	.carouselWrapper:hover .feedbackCard {
+		height: 600px;
+		max-height: 600px;
+	}
+
+	.clientName {
+		font-size: 1.8rem;
+	}
+
+	.clientRole {
+		font-size: 1.2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.feedbackText {
+		font-size: 1.25rem;
+		line-height: 1.6;
+	}
+}
+
+/* iPad Mini specific */
+@media screen and (min-width: 768px) and (max-width: 810px) {
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		padding: 2rem 0;
+		gap: 35px;
+	}
+
+	.whyConsultWrapper {
+		max-width: 650px;
+	}
+
+	.whyConsultWrapper h2 {
+		font-size: 2.2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.whyConsultWrapper p {
+		font-size: 1.15rem;
+		line-height: 1.6;
+	}
+
+	.carouselItem {
+		padding: 0 10px;
+		padding-bottom: 10px;
+	}
+
+	.feedbackCard {
+		padding: 1.8rem;
+		height: 360px;
+		max-height: 360px;
+	}
+
+	.carouselWrapper:hover .feedbackCard {
+		height: 580px;
+		max-height: 580px;
+	}
+
+	.clientName {
+		font-size: 1.8rem;
+	}
+
+	.clientRole {
+		font-size: 1.2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.feedbackText {
+		font-size: 1.25rem;
 		line-height: 1.6;
 	}
 }

@@ -20,9 +20,7 @@
 	background: var(--primary-bg);
 	padding: 2rem;
 	border-radius: 20px;
-	box-shadow:
-		0 10px 30px rgba(0, 0, 0, 0.1),
-		0 4px 6px rgba(0, 0, 0, 0.05),
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05),
 		0 1px 3px rgba(60, 71, 186, 0.12);
 	transform: translate3d(0, 20px, 0) scale(0.95);
 	opacity: 0;
@@ -32,16 +30,12 @@
 }
 
 .faqWrapper:hover {
-	box-shadow:
-		0 15px 35px rgba(0, 0, 0, 0.15),
-		0 5px 8px rgba(0, 0, 0, 0.08),
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 8px rgba(0, 0, 0, 0.08),
 		0 2px 4px rgba(60, 71, 186, 0.15);
 }
 
 .faqWrapper.visible {
-	animation:
-		fadeIn 0.4s ease forwards,
-		scaleIn 0.4s ease forwards;
+	animation: fadeIn 0.4s ease forwards, scaleIn 0.4s ease forwards;
 }
 
 .faqQuestion {
@@ -80,28 +74,126 @@
 
 .socialLinks a {
 	color: var(--foreground);
-	transition:
-		color 0.3s ease,
-		transform 0.3s ease;
+	transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .socialLinks a:hover {
 	transform: scale(1.5);
 }
 
-@keyframes fadeIn {
-	to {
-		opacity: 1;
+/* iPad Pro (1024x1366) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+	.socialLinks a svg {
+		width: 60px;
+		height: 60px;
+	}
+
+	.socialLinks {
+		gap: 3rem;
+	}
+
+	.socialContainer h2 {
+		font-size: 2.6rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.faqQuestion {
+		font-size: 2.2rem;
+	}
+
+	.faqAnswer {
+		font-size: 1.4rem;
+		line-height: 1.7;
 	}
 }
 
-@keyframes scaleIn {
-	to {
-		transform: translate3d(0, 0, 0) scale(1);
+/* iPad Pro 11" (1020x1030) */
+@media screen and (min-width: 1020px) and (max-width: 1023px) {
+	.socialLinks a svg {
+		width: 56px;
+		height: 56px;
+	}
+
+	.socialLinks {
+		gap: 3rem;
+	}
+
+	.socialContainer h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.faqQuestion {
+		font-size: 2.1rem;
+	}
+
+	.faqAnswer {
+		font-size: 1.35rem;
+		line-height: 1.7;
 	}
 }
 
-@media (max-width: 768px) {
+/* iPad Air (820-834px) */
+@media screen and (min-width: 820px) and (max-width: 834px) {
+	.socialLinks a svg {
+		width: 52px;
+		height: 52px;
+	}
+
+	.socialLinks {
+		gap: 3rem;
+	}
+
+	.socialContainer h2 {
+		font-size: 2.3rem;
+		margin-bottom: 2.3rem;
+	}
+
+	.faqQuestion {
+		font-size: 2rem;
+	}
+
+	.faqAnswer {
+		font-size: 1.3rem;
+		line-height: 1.6;
+	}
+}
+
+/* iPad Mini (768-810px) */
+@media screen and (min-width: 768px) and (max-width: 810px) {
+	.socialLinks a svg {
+		width: 65px;
+		height: 65px;
+	}
+
+	.socialLinks {
+		gap: 4rem;
+	}
+
+	.socialContainer h2 {
+		font-size: 3.2rem;
+		margin-bottom: 3rem;
+	}
+
+	.faqQuestion {
+		font-size: 2.6rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.faqAnswer {
+		font-size: 1.8rem;
+		line-height: 1.7;
+		padding-left: 0.8rem;
+		border-left: 4px solid var(--foreground);
+	}
+
+	.faqWrapper {
+		padding: 2.5rem;
+	}
+}
+
+/* Dispositivos menores que iPad Mini */
+@media (max-width: 767px) {
 	.faqWrapper {
 		width: 90%;
 		padding: 1.5rem;
@@ -114,5 +206,17 @@
 	.faqAnswer {
 		font-size: 1rem;
 		padding-left: 0.3rem;
+	}
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes scaleIn {
+	to {
+		transform: translate3d(0, 0, 0) scale(1);
 	}
 }

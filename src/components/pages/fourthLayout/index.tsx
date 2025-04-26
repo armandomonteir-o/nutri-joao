@@ -10,9 +10,12 @@ import RatingAverage from "@/components/RatingAverage"
 
 export default function FourthLayout() {
 	const [isMounted, setIsMounted] = useState(false)
+	const [isTouch, setIsTouch] = useState(false)
 
 	useEffect(() => {
 		setIsMounted(true)
+		// Verifica se é um dispositivo touch quando o componente é montado no cliente
+		setIsTouch(window.matchMedia('(max-width: 1366px) and (pointer: coarse)').matches)
 	}, [])
 
 	const carouselItems = feedback.map((item, index) => (
@@ -36,7 +39,8 @@ export default function FourthLayout() {
 	const responsive = {
 		0: { items: 1, itemsFit: "contain" },
 		768: { items: 2, itemsFit: "contain" },
-		1024: { items: 3, itemsFit: "contain" },
+		1024: { items: 2, itemsFit: "contain" },
+		1200: { items: 3, itemsFit: "contain" },
 	}
 
 	return (
@@ -74,6 +78,9 @@ export default function FourthLayout() {
 						responsive={responsive}
 						controlsStrategy="alternate"
 						disableDotsControls
+						touchTracking={true}
+						touchMoveDefaultEvents={false}
+						disableButtonsControls={isTouch}
 						infinite
 						autoPlay
 						autoPlayInterval={4000}

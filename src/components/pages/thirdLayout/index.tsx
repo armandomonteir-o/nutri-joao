@@ -152,7 +152,7 @@ export default function ThirdLayout() {
 
 								<footer className={styles.cardFooter}>
 									<a
-										href={`https://wa.me/5524998416823?text=${encodeURIComponent(
+										href={`https://api.whatsapp.com/send?phone=5524998416823&text=${encodeURIComponent(
 											plan.whatsappMessage
 										)}`}
 										className={

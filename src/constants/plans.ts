@@ -24,7 +24,7 @@ export const plans: Plan[] = [
 		],
 		price: 100,
 		whatsappMessage:
-			"Olá, João. Estava lendo sobre os planos e me interessei pelo de *Consulta e Reavaliação*. Gostaria de saber mais sobre ele! 😄",
+			"Olá, João. Estava lendo sobre os planos e me interessei pelo de *Consulta e Reavaliação*. Gostaria de saber mais sobre ele! :)",
 	},
 	{
 		id: "consultoria-3meses",
@@ -39,7 +39,7 @@ export const plans: Plan[] = [
 		],
 		price: 200,
 		whatsappMessage:
-			"Olá, João. Estava lendo sobre os planos e me interessei pelo de *Consultoria de 3 meses*. Gostaria de saber mais sobre ele! 😄",
+			"Olá, João. Estava lendo sobre os planos e me interessei pelo de *Consultoria de 3 meses*. Gostaria de saber mais sobre ele! :)",
 	},
 	{
 		id: "consultoria-6meses",
@@ -55,6 +55,6 @@ export const plans: Plan[] = [
 		],
 		price: 300,
 		whatsappMessage:
-			"Olá, João. Estava lendo sobre os planos e me interessei pelo de *Consultoria de 6 meses*. Gostaria de saber mais sobre ele! 😄",
+			"Olá, João. Estava lendo sobre os planos e me interessei pelo de *Consultoria de 6 meses*. Gostaria de saber mais sobre ele! :)",
 	},
 ]

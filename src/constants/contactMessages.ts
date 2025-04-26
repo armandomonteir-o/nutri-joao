@@ -9,11 +9,11 @@ const phoneNumber = "5524998416823" // Substitua pelo número correto, se necess
 export const contactMessages: ContactMessage[] = [
 	{
 		id: "conheca-mais",
-		message: `Olá, João Paulo! Acabei de ler sobre a SlimMind e me interessei muito pelo projeto. Gostaria de conversar sobre uma possível parceria! 😊`,
+		message: `Olá, João Paulo! Acabei de ler sobre a SlimMind e me interessei muito pelo projeto. Gostaria de conversar sobre uma possível parceria!`,
 	},
 	{
 		id: "entre-em-contato",
-		message: `Olá, João Paulo! Acabei de ver o seu site e fiquei interessado em sua metodologia de trabalho. Gostaria de saber mais! 😊`,
+		message: `Olá, João Paulo! Acabei de ver o seu site e fiquei interessado em sua metodologia de trabalho. Gostaria de saber mais!`,
 	},
 	// Adicione outras mensagens gerais aqui, se necessário
 ]

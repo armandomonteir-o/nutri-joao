@@ -110,6 +110,10 @@
 	white-space: nowrap;
 	opacity: 0.8;
 	transition: opacity 0.3s ease;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .text:hover {

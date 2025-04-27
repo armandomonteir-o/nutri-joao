@@ -127,6 +127,15 @@
 	margin-left: 15px;
 }
 
+/* Classe para evitar que as imagens sejam arrastadas/copiadas */
+.noDragImage {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
 .left .responsiveImage:not(.jampaImageZoom) {
 	margin-right: 12px;
 	margin-left: 25px;

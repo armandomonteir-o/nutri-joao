@@ -79,16 +79,18 @@ export default function SecondLayout() {
 							no botão abaixo.
 						</p>
 						<div className={styles.jampaImageContainer}>
-							<Image
-								src={JampaImage}
-								alt="Nutricionista João Paulo"
-								width={450}
-								height={450}
-								className={`${styles.responsiveImage} ${styles.jampaImageZoom}`}
-								style={{
-									borderRadius: "12px",
-								}}
-							/>
+							<div className={styles.noDragImage}>
+								<Image
+									src={JampaImage}
+									alt="Nutricionista João Paulo"
+									width={450}
+									height={450}
+									className={`${styles.responsiveImage} ${styles.jampaImageZoom}`}
+									style={{
+										borderRadius: "12px",
+									}}
+								/>
+							</div>
 						</div>
 					</div>
 					<Button
@@ -105,16 +107,18 @@ export default function SecondLayout() {
 				>
 					<h2>O que é a SlimMind</h2>
 					<div className={styles.contentWrapper}>
-						<Image
-							src={slimMindLogo}
-							alt="logo"
-							width={350}
-							height={350}
-							className={styles.responsiveImage}
-							style={{
-								borderRadius: "12px",
-							}}
-						/>
+						<div className={styles.noDragImage}>
+							<Image
+								src={slimMindLogo}
+								alt="logo"
+								width={350}
+								height={350}
+								className={styles.responsiveImage}
+								style={{
+									borderRadius: "12px",
+								}}
+							/>
+						</div>
 						<p>
 							A SlimMind é um projeto que tem como missão
 							transformar vidas por meio da nutrição. Nosso

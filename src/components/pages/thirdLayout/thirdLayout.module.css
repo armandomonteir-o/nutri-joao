@@ -27,6 +27,10 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .container h2.visible {
@@ -586,6 +590,8 @@ div:has(.imageSectionThird) {
 		padding-left: 0;
 		align-self: stretch;
 		gap: 0.8rem;
+		margin-bottom: 20px;
+		flex-grow: 1;
 	}
 
 	.benefitItem {
@@ -814,6 +820,376 @@ div:has(.imageSectionThird) {
 
 	.benefitsGrid {
 		gap: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        padding: 2rem 1.5rem; /* Uniform padding */
+        min-height: auto; /* Remove minimum height */
+        justify-content: flex-start; /* Align items to top */
+        /* gap: 1.5rem; Optional: Add gap if needed */
+    }
+
+    .textSection {
+        width: 100%;
+        padding: 0; /* Remove specific padding */
+        margin-bottom: 1rem; /* Space before button */
+        flex-grow: 1; /* Allow text section to grow */
+    }
+
+    .benefitsGrid {
+        width: 100%;
+        padding: 0; /* Remove specific padding */
+        margin-bottom: 2rem; /* Space between benefits and button */
+    }
+
+    .benefitItem {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px; /* Slightly larger gap */
+        align-items: start;
+        padding: 0; /* Remove specific padding */
+        width: 100%;
+        margin-bottom: 1rem; /* Increase space between items */
+    }
+
+    .benefitItem span {
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .benefitsGrid li {
+        font-size: 1.15rem; /* Font size for tablet/mobile */
+    }
+
+    .title {
+        font-size: 1.8rem; /* Keep title size reasonable */
+        margin-bottom: 1.5rem; /* Space below title */
+    }
+
+    .imageSection {
+        display: none; /* Hide the image */
+    }
+
+    .whatsappButton {
+        width: 170px; /* Tablet/Mobile size */
+        padding: 14px 18px; /* Tablet/Mobile padding */
+        font-size: 1.1rem; /* Slightly larger font for button */
+        align-self: center; /* Center button */
+        margin-top: auto; /* Push to bottom if card is flex */
+        margin-bottom: 0; /* No margin at the very bottom */
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 420px) {
+	.container {
+		width: 95%;
+		margin: 0 auto;
+		gap: 30px;
+	}
+
+	.card {
+		width: 95%;
+		margin: 0 auto;
+		padding: 1.5rem 1rem 0 1rem;
+		position: relative;
+		border-radius: 16px;
+		min-height: 520px;
+		overflow: visible;
+	}
+
+	.contentWrapper,
+	.contentWrapperReversed {
+		flex-direction: column !important;
+		position: static;
+		gap: 1rem;
+		height: 100%;
+	}
+
+	.textSection {
+		order: 1;
+		padding: 0.5rem 0.8rem;
+		text-align: center;
+		z-index: 2;
+	}
+
+	.cardHeader {
+		margin-bottom: 1rem;
+		width: 100%;
+	}
+
+	.cardHeader h3 {
+		font-size: 1.8rem;
+		text-align: center;
+		margin-top: 0;
+	}
+
+	.benefitsGrid {
+		width: 100%;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 0.7rem;
+	}
+
+	.benefitItem {
+		width: 100%;
+		font-size: 0.95rem;
+		line-height: 1.3;
+		justify-content: flex-start;
+		text-align: left;
+	}
+
+	.cardFooter {
+		margin-top: 1.2rem;
+		z-index: 2;
+		position: relative;
+		padding-bottom: 0;
+	}
+
+	.whatsappButton {
+		font-size: 1rem;
+		padding: 0.8rem 1rem;
+		width: 160px;
+		white-space: nowrap;
+		position: relative;
+		z-index: 10;
+		align-self: center;
+	}
+
+	.imageSection {
+		order: 2;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 280px;
+		min-height: unset;
+		padding: 0;
+		margin: 0;
+		z-index: 1;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+	}
+
+	.iconContainer,
+	.iconContainerSecond,
+	.iconContainerThird {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.icon,
+	.iconSecond,
+	.iconThird {
+		transform: scale(1.2);
+		bottom: -5px;
+		margin: 0;
+		object-fit: cover;
+		object-position: center bottom;
+		max-height: 280px;
+	}
+}
+
+/* Específico para iPhone X */
+@media screen and (width: 414px) {
+	.card {
+		min-height: 600px;
+		padding: 1.2rem 0.8rem 0 0.8rem;
+		width: 95%;
+		position: relative;
+		overflow: visible;
+	}
+
+	.contentWrapper,
+	.contentWrapperReversed {
+		flex-direction: column !important;
+		position: static;
+		align-items: center;
+	}
+
+	.textSection {
+		padding: 0 0.6rem;
+		width: 100%;
+		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cardHeader {
+		margin-bottom: 1.2rem;
+		text-align: center;
+	}
+
+	.cardHeader h3 {
+		font-size: 1.8rem;
+		text-align: center;
+		color: var(--primary-bg);
+	}
+
+	.benefitsGrid {
+		width: 100%;
+		padding: 0;
+		gap: 0.8rem;
+		margin-bottom: 20px;
+		align-items: flex-start;
+	}
+
+	.benefitItem {
+		font-size: 0.9rem;
+		line-height: 1.4;
+		gap: 0.6rem;
+		justify-content: flex-start;
+		width: 100%;
+		margin-bottom: 0.2rem;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 8px;
+		align-items: start;
+	}
+
+	.benefitText {
+		display: inline-block;
+		width: calc(100% - 25px);
+		text-align: left;
+	}
+
+	.cardFooter {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		bottom: 250px;
+		left: 0;
+		z-index: 10;
+	}
+
+	.whatsappButton {
+		width: 160px;
+		padding: 12px 16px;
+		font-size: 1rem;
+		white-space: nowrap;
+		z-index: 10;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.imageSection {
+		height: 340px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		padding: 0;
+		margin: 0;
+	}
+
+	.iconContainer,
+	.iconContainerSecond,
+	.iconContainerThird {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		margin: 0;
+	}
+
+	.icon,
+	.iconSecond,
+	.iconThird {
+		transform: scale(1.6);
+		transform-origin: center bottom;
+		bottom: -50px;
+		position: relative;
+		max-height: 340px;
+		object-fit: cover;
+		object-position: center bottom;
+	}
+
+	.checkIcon {
+		color: var(--primary-bg);
+		font-weight: bold;
+		margin-right: 2px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.card {
+		padding: 1.5rem 1rem; /* Smaller padding for small mobile */
+        /* min-height: 570px; Removed - handled by 1024px query */
+		width: 95%;
+		/* justify-content: flex-start; Inherited from 1024px */
+	}
+
+	.textSection {
+		/* All properties inherited or handled by 1024px query */
+        /* width: 100%; */
+        /* padding: 0; */
+        /* margin-bottom: 1rem; */
+        /* flex-grow: 1; */
+	}
+
+	.benefitsGrid {
+        /* width: 100%; */
+        /* padding: 0; */
+        margin-bottom: 1.5rem; /* Adjust space before button for small mobile */
+	}
+
+	.benefitItem {
+		/* display: grid; Inherited */
+        /* grid-template-columns: auto 1fr; Inherited */
+        gap: 8px; /* Slightly smaller gap for mobile */
+        /* align-items: start; Inherited */
+        /* padding: 0; Inherited */
+        /* width: 100%; Inherited */
+        margin-bottom: 0.8rem; /* Adjust space between items */
+	}
+
+    .benefitItem .checkIcon {
+        /* No specific override needed */
+    }
+
+    .benefitItem span {
+        /* text-align: left; Inherited */
+        /* line-height: 1.5; Inherited */
+        /* Ensure wrapping behaves */
+    }
+
+	.benefitsGrid li {
+		font-size: 1.1rem; /* Slightly smaller font for small mobile */
+	}
+
+	.title {
+		font-size: 1.6rem; /* Slightly smaller title */
+        margin-bottom: 1rem; /* Adjust space below title */
+	}
+
+	.whatsappButton {
+		width: 160px; /* Mobile size override */
+		padding: 12px 16px; /* Mobile padding override */
+		font-size: 1rem; /* Mobile font override */
+        /* align-self: center; Inherited */
+        /* margin-top: auto; Inherited */
+        /* margin-bottom: 0; Inherited */
+	}
+
+	.imageSection {
+		/* display: none; Inherited from 1024px */
+        /* All image styles irrelevant */
+	}
+
+	.imageSection img {
+	    /* All image styles irrelevant */
 	}
 }
 

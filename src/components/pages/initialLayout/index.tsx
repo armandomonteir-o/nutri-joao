@@ -15,12 +15,14 @@ export default function initialLayout() {
 		<>
 			<div className={styles.container}>
 				<div className={styles.innercontainer}>
-					<Image
-						src={slimMindLogo}
-						alt="Logo SlimMind"
-						width={150}
-						height={150}
-					></Image>
+					<div className={styles.logoWrapper}>
+						<Image
+							src={slimMindLogo}
+							alt="Logo SlimMind"
+							width={150}
+							height={150}
+						></Image>
+					</div>
 					<h1>Nutricionista - João Paulo</h1>
 					<h2>
 						Bem vindo ao primeiro passo da sua grande mudança.

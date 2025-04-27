@@ -79,3 +79,14 @@ a {
 		background: #999;
 	}
 }
+
+/* Impede que imagens sejam arrastadas ou copiadas */
+img,
+Image,
+.no-drag-image {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	pointer-events: none;
+}

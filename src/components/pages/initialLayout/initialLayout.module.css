@@ -92,6 +92,15 @@
 	margin: 0vh 0;
 }
 
+/* Classe para evitar que o logo seja arrastado/copiado */
+.logoWrapper {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
 /* Large desktop screens */
 @media screen and (min-width: 1200px) {
 	.container {

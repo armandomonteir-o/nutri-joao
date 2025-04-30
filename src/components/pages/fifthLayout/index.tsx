@@ -41,21 +41,21 @@ export default function FifthLayout() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<FaInstagram size={32} />
+						<FaInstagram size={48} />
 					</a>
 					<a
 						href="https://wa.me/5524998416823"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<FaWhatsapp size={32} />
+						<FaWhatsapp size={48} />
 					</a>
 					<a
 						href="https://www.linkedin.com/in/jo%C3%A3o-garcia-a78018240/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<FaLinkedin size={32} />
+						<FaLinkedin size={48} />
 					</a>
 				</div>
 			</div>

@@ -21,10 +21,10 @@ export default function ThirdLayout() {
 		checkIfMobile()
 
 		// Add event listener for window resize
-		window.addEventListener('resize', checkIfMobile)
+		window.addEventListener("resize", checkIfMobile)
 
 		// Cleanup
-		return () => window.removeEventListener('resize', checkIfMobile)
+		return () => window.removeEventListener("resize", checkIfMobile)
 	}, [])
 
 	useEffect(() => {
@@ -79,7 +79,9 @@ export default function ThirdLayout() {
 						className={styles.card}
 						style={{
 							flexDirection:
-								index === 1 && !isMobile ? "row-reverse" : "row",
+								index === 1 && !isMobile
+									? "row-reverse"
+									: "row",
 						}}
 					>
 						<div
@@ -92,7 +94,9 @@ export default function ThirdLayout() {
 							{/* Container da imagem - só renderiza se não for mobile */}
 							{!isMobile && (
 								<div
-									className={`${styles.imageSection} ${
+									className={`${
+										styles.imageSection
+									} ${
 										index === 1
 											? styles.imageSectionSecond
 											: index === 2
@@ -101,7 +105,9 @@ export default function ThirdLayout() {
 									}`}
 								>
 									<div
-										className={`${styles.iconContainer}
+										className={`${
+											styles.iconContainer
+										}
         ${
 			index === 1
 				? styles.iconContainerSecond
@@ -111,7 +117,9 @@ export default function ThirdLayout() {
 		}`}
 									>
 										<Image
-											className={`${styles.icon}
+											className={`${
+												styles.icon
+											}
                 ${
 					index === 1
 						? styles.iconSecond
@@ -146,22 +154,12 @@ export default function ThirdLayout() {
 														] = el
 												}}
 												key={i}
-												className={
-													styles.benefitItem
-												}
+												className={styles.benefitItem}
 											>
-												<span
-													className={
-														styles.checkIcon
-													}
-												>
+												<span className={styles.checkIcon}>
 													✓
 												</span>
-												<span
-													className={
-														styles.benefitText
-													}
-												>
+												<span className={styles.benefitText}>
 													{benefit}
 												</span>
 											</div>

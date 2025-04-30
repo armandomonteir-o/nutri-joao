@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef, Fragment } from "react"
+import { useEffect, useRef, Fragment, useState } from "react"
 import Image from "next/image"
 import styles from "@/components/pages/thirdLayout/thirdLayout.module.css"
 import { plans } from "@/constants/plans"
@@ -9,6 +9,23 @@ export default function ThirdLayout() {
 	const cardsRef = useRef<Array<HTMLDivElement | null>>([])
 	const h2Ref = useRef<HTMLHeadingElement | null>(null)
 	const benefitItemsRef = useRef<Array<HTMLDivElement | null>>([])
+	const [isMobile, setIsMobile] = useState(false)
+
+	useEffect(() => {
+		// Detect if the viewport is mobile
+		const checkIfMobile = () => {
+			setIsMobile(window.innerWidth <= 768)
+		}
+
+		// Check on initial render
+		checkIfMobile()
+
+		// Add event listener for window resize
+		window.addEventListener('resize', checkIfMobile)
+
+		// Cleanup
+		return () => window.removeEventListener('resize', checkIfMobile)
+	}, [])
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -62,28 +79,29 @@ export default function ThirdLayout() {
 						className={styles.card}
 						style={{
 							flexDirection:
-								index === 1 ? "row-reverse" : "row",
+								index === 1 && !isMobile ? "row-reverse" : "row",
 						}}
 					>
 						<div
 							className={`${styles.contentWrapper} ${
-								index === 1
+								index === 1 && !isMobile
 									? styles.contentWrapperReversed
 									: ""
 							}`}
 						>
-							{/* Container da imagem */}
-							<div
-								className={`${styles.imageSection} ${
-									index === 1
-										? styles.imageSectionSecond
-										: index === 2
-										? styles.imageSectionThird
-										: ""
-								}`}
-							>
+							{/* Container da imagem - só renderiza se não for mobile */}
+							{!isMobile && (
 								<div
-									className={`${styles.iconContainer}
+									className={`${styles.imageSection} ${
+										index === 1
+											? styles.imageSectionSecond
+											: index === 2
+											? styles.imageSectionThird
+											: ""
+									}`}
+								>
+									<div
+										className={`${styles.iconContainer}
         ${
 			index === 1
 				? styles.iconContainerSecond
@@ -91,9 +109,9 @@ export default function ThirdLayout() {
 				? styles.iconContainerThird
 				: ""
 		}`}
-								>
-									<Image
-										className={`${styles.icon}
+									>
+										<Image
+											className={`${styles.icon}
                 ${
 					index === 1
 						? styles.iconSecond
@@ -101,14 +119,15 @@ export default function ThirdLayout() {
 						? styles.iconThird
 						: ""
 				}`}
-										src={plan.icon.src}
-										alt={plan.title}
-										width={500}
-										height={500}
-										priority={index === 0}
-									/>
+											src={plan.icon.src}
+											alt={plan.title}
+											width={500}
+											height={500}
+											priority={index === 0}
+										/>
+									</div>
 								</div>
-							</div>
+							)}
 
 							{/* Container de conteúdo */}
 							<div className={styles.textSection}>

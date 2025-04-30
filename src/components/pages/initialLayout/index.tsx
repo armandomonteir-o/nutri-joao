@@ -15,7 +15,7 @@ export default function InitialLayout() {
 		console.log("oi")
 	}
 
-	const handleVideoError = (e) => {
+	const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
 		console.error("Erro ao carregar o vídeo:", e)
 		setVideoError(true)
 	}

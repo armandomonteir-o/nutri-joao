@@ -17,6 +17,58 @@
 	display: block;
 }
 
+/* Estilos para o fallback quando o vídeo não carrega */
+.fallbackVideo {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: #000;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.fallbackImage {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	display: block;
+	opacity: 0.7;
+}
+
+.fallbackMessage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 15px;
+	border-radius: 8px;
+	width: 80%;
+}
+
+.fallbackMessage p {
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+.fallbackMessage a {
+	color: #3f8cff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 16px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.fallbackMessage a:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+	color: #fff;
+}
+
 .container {
 	width: 100%;
 	max-width: 500px;
@@ -54,6 +106,30 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.priceText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 8px;
+}
+
+.priceText p {
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.priceText p:first-child {
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.priceText p:last-child {
+	font-weight: 700;
+	font-size: 22px;
 }
 
 .container h1 {
@@ -94,11 +170,11 @@
 
 /* Classe para evitar que o logo seja arrastado/copiado */
 .logoWrapper {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  pointer-events: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	pointer-events: none;
 }
 
 /* Large desktop screens */

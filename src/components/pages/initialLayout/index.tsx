@@ -15,8 +15,17 @@ export default function InitialLayout() {
 		console.log("oi")
 	}
 
-	const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+	// Manipulador para eventos do componente Video
+	const handleVideoError = (
+		e: React.SyntheticEvent<HTMLVideoElement, Event>
+	) => {
 		console.error("Erro ao carregar o vídeo:", e)
+		setVideoError(true)
+	}
+
+	// Manipulador para eventos de DOM nativo
+	const handleDOMVideoError = (e: Event) => {
+		console.error("Erro DOM ao carregar o vídeo:", e)
 		setVideoError(true)
 	}
 
@@ -32,7 +41,7 @@ export default function InitialLayout() {
 
 		const videoElement = document.querySelector("video")
 		if (videoElement) {
-			videoElement.addEventListener("error", handleVideoError)
+			videoElement.addEventListener("error", handleDOMVideoError)
 
 			// Aplicar ajustes apenas se for Opera GX
 			if (isOperaGXBrowser) {
@@ -52,7 +61,10 @@ export default function InitialLayout() {
 
 		return () => {
 			if (videoElement) {
-				videoElement.removeEventListener("error", handleVideoError)
+				videoElement.removeEventListener(
+					"error",
+					handleDOMVideoError
+				)
 			}
 		}
 	}, [])

@@ -524,7 +524,8 @@
 		margin: 0 auto;
 	}
 
-	.container.initialLayout_container__6a0h7 .initialLayout_innercontainer__MHXG5 {
+	.container.initialLayout_container__6a0h7
+		.initialLayout_innercontainer__MHXG5 {
 		justify-content: center;
 		padding: 3vh 15px;
 		align-items: center;
@@ -596,14 +597,33 @@
 /* Ajuste específico para 1366x768 */
 @media screen and (width: 1366px) and (height: 768px) {
 	.videocontainer {
-		width: 85%;
-		margin: 2vh auto;
+		width: 50%;
+		margin: auto;
+		position: relative;
+		aspect-ratio: 16/9;
+		max-width: 800px;
 	}
 
 	.videocontainer video,
 	.videocontainer iframe {
-		max-height: 38vh !important;
-		min-height: 320px !important;
+		width: 100% !important;
+		height: 100% !important;
+		object-fit: contain !important;
+		display: block;
+		border-radius: 8px;
+	}
+
+	.container {
+		max-width: 90%;
+	}
+
+	.container .innercontainer {
+		justify-content: flex-start;
+		padding-top: 0vh;
+	}
+
+	.buttonWrapper {
+		margin-top: 2vh;
 	}
 }
 
@@ -612,7 +632,7 @@
 .videocontainer video::-webkit-media-controls-panel {
 	display: flex !important;
 	opacity: 1 !important;
-	background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 }
 
 .videocontainer video::-webkit-media-controls {
@@ -797,26 +817,37 @@
 		flex-direction: column;
 	}
 
+	.videocontainer {
+		width: 100%;
+		margin: 1vh auto;
+		max-height: 35vh;
+	}
+
+	.videocontainer video,
+	.videocontainer iframe {
+		width: 100% !important;
+		height: 100% !important;
+		max-height: 35vh !important;
+		min-height: auto !important;
+		object-fit: contain !important;
+	}
+
 	.container img {
 		margin-bottom: 0.5vh;
 	}
 
 	.container h1 {
-		margin-top: 2vh;
-		margin-bottom: 2vh;
+		margin-top: 1.5vh;
+		margin-bottom: 1.5vh;
 	}
 
 	.container h2 {
 		padding: 5px;
-		margin-bottom: 2vh;
-	}
-
-	.videocontainer {
-		margin: 2vh auto;
+		margin-bottom: 1.5vh;
 	}
 
 	.buttonWrapper {
-		padding: 3vh 0;
+		padding: 2vh 0;
 		margin-top: 0vh;
 		gap: 1vh;
 		margin-bottom: auto;
@@ -827,7 +858,7 @@
 	.container:after {
 		content: "";
 		display: block;
-		height: 3vh;
+		height: 2vh;
 	}
 }
 

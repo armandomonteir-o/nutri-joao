@@ -616,7 +616,7 @@
 
 	.buttonWrapper {
 		margin-top: 0.1vh; /* Margem superior mínima */
-        gap: 0.1vh; /* Gap interno mínimo */
+		gap: 0.1vh; /* Gap interno mínimo */
 	}
 
 	.container h1 {
@@ -777,6 +777,14 @@
 		content: "";
 		display: block;
 		height: 5vh;
+	}
+}
+
+/* Styles for very large screens (e.g., 1920x1080 @ 125% zoom -> 1536px effective width) */
+@media screen and (min-width: 1367px) {
+	.videocontainer {
+		max-width: 1000px; /* Allow video to be larger */
+		overflow: visible; /* Ensure player controls are not clipped */
 	}
 }
 

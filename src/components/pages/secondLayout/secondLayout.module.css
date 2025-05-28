@@ -129,11 +129,11 @@
 
 /* Classe para evitar que as imagens sejam arrastadas/copiadas */
 .noDragImage {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  pointer-events: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	pointer-events: none;
 }
 
 .left .responsiveImage:not(.jampaImageZoom) {
@@ -183,12 +183,30 @@
 @media screen and (min-width: 1400px) and (max-width: 1799px) {
 	.jampaImageContainer {
 		height: 580px;
-		margin-top: -65px; /* Ajustado proporcionalmente às alterações do iPhone SE */
+		margin-top: -60px; /* Adjusted for new scale */
 		margin-bottom: -118px; /* Ajustado proporcionalmente */
 	}
 
 	.jampaImageZoom {
-		transform: scale(1.32);
+		transform: scale(1.28); /* Reduced scale for zoomed viewports */
+	}
+
+	.firstCardButton {
+		margin-top: 40px; /* Aumentado o margin-top do botão conforme solicitado */
+	}
+}
+
+@media screen and (min-width: 1500px) and (max-width: 2304px) {
+	.jampaImageContainer {
+		height: 580px;
+		margin-top: -70px; /* Adjusted for new scale */
+		margin-bottom: -118px; /* Ajustado proporcionalmente */
+	}
+
+	.jampaImageZoom {
+		transform: scale(2); /* User-defined scale for this viewport */
+		object-position: center bottom; /* Align bottom of image content */
+		bottom: -171px;
 	}
 
 	.firstCardButton {

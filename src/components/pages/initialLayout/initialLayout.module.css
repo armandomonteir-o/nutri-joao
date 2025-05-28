@@ -528,7 +528,7 @@
 		.initialLayout_innercontainer__MHXG5 {
 		justify-content: center;
 		padding: 3vh 15px;
-		align-items: center;
+		align-items: left;
 	}
 
 	.videocontainer {
@@ -544,6 +544,7 @@
 		width: 100% !important;
 		height: 100% !important;
 		border-radius: 8px;
+		object-fit: contain !important;
 	}
 
 	.fallbackImage {
@@ -580,17 +581,50 @@
 /* Media query para telas médias incluindo 1366x768 */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 	.videocontainer {
-		width: 90%;
-		max-width: 1000px;
-		margin: 2vh auto;
+		width: 90%; /* Mantém flexibilidade, mas max-width controlará no Nest Hub */
+		max-width: 700px; /* Reduzido para melhor encaixe no Nest Hub (1024x600) */
+		margin: 0.25vh auto; /* Margem vertical mínima */
+		position: relative;
+		height: 0;
+		padding-bottom: 56.25%; /* 16:9 aspect ratio */
+		overflow: hidden;
+	}
+
+	/* Wrapper do next-video (primeiro filho) deve preencher o .videocontainer */
+	.videocontainer > :first-child {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	.videocontainer video,
 	.videocontainer iframe {
-		max-height: 35vh !important;
-		min-height: 300px !important;
+		display: block; /* Garante comportamento de bloco */
 		width: 100% !important;
+		height: 100% !important;
 		border-radius: 8px;
+		object-fit: contain !important;
+		/* position: static; ou relative; pois o pai :first-child já é absoluto */
+	}
+
+	.innercontainer {
+		padding: 0 15px; /* Padding vertical NULO */
+		gap: 0; /* Remove gap entre os filhos diretos, controlando com margens */
+	}
+
+	.buttonWrapper {
+		margin-top: 0.1vh; /* Margem superior mínima */
+        gap: 0.1vh; /* Gap interno mínimo */
+	}
+
+	.container h1 {
+		margin: 0.25vh 0 0.25vh 0; /* Margens verticais reduzidas */
+	}
+
+	.container h2 {
+		margin: 0.25vh 0 0.25vh 0; /* Margens verticais reduzidas */
 	}
 }
 

@@ -782,9 +782,39 @@
 
 /* Styles for very large screens (e.g., 1920x1080 @ 125% zoom -> 1536px effective width) */
 @media screen and (min-width: 1367px) {
+	.innercontainer {
+		padding-top: 1vh; /* Reduz padding superior */
+		padding-bottom: 1vh; /* Reduz padding inferior para subir tudo */
+	}
+
+	.container h1 {
+		font-size: 26px; /* Reduz tamanho da fonte h1 */
+		margin-top: 0.5vh;
+		margin-bottom: 0.25vh;
+	}
+
+	.container h2 {
+		font-size: 20px; /* Reduz tamanho da fonte h2 */
+		margin-bottom: 0.5vh;
+		padding: 5px; /* Reduz padding do h2 */
+	}
+
 	.videocontainer {
-		max-width: 1000px; /* Allow video to be larger */
-		overflow: visible; /* Ensure player controls are not clipped */
+		max-width: 1000px;
+		overflow: visible;
+		margin-bottom: 1vh; /* Margem inferior menor para o vídeo */
+	}
+
+	.buttonWrapper {
+		padding: 1.5vh; /* Reduz padding do wrapper do botão */
+	}
+
+	.priceText p:first-child {
+		font-size: 18px; /* Reduz fonte do texto de preço */
+	}
+
+	.priceText p:last-child {
+		font-size: 20px; /* Reduz fonte do texto de preço */
 	}
 }
 

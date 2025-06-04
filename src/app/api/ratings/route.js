@@ -12,7 +12,7 @@ export async function GET() {
 		if (process.env.NODE_ENV === "production") {
 			const allowedDomains = [
 				process.env.NEXT_PUBLIC_SITE_URL,
-				"https://dev-jampa.vercel.app",
+				"https://www.consultasslimmind.com.br",
 			]
 
 			if (

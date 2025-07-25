@@ -13,7 +13,7 @@ export const faq = [
 	{
 		id: 2,
 		question: "Onde você está localizado?",
-		answer: "Estou localizado em Pinheiral, RJ.",
+		answer: "Estou localizado em Angra dos Reis, RJ.",
 	},
 	{
 		id: 3,

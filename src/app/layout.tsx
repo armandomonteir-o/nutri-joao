@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Consultoria Nutricional SlimMind",
 	description:
-		"Alcance seus objetivos de saúde com a Consultoria Nutricional SlimMind em Pinheiral. Planos personalizados para emagrecimento e bem-estar. Agende sua consulta!",
+		"Alcance seus objetivos de saúde com a Consultoria Nutricional SlimMind em Angra dos Reis. Planos personalizados para emagrecimento e bem-estar. Agende sua consulta!",
 }
 
 const anton = Anton({

@@ -1,12 +1,15 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
+import dynamic from "next/dynamic"
 import InitialLayout from "@/components/pages/initialLayout"
-import SecondLayout from "@/components/pages/secondLayout"
-import ThirdLayout from "@/components//pages/thirdLayout"
+
+const SecondLayout = dynamic(() => import("@/components/pages/secondLayout"))
+const ThirdLayout = dynamic(() => import("@/components/pages/thirdLayout"))
+const FourthLayout = dynamic(() => import("@/components/pages/fourthLayout"))
+const FifthLayout = dynamic(() => import("@/components/pages/fifthLayout"))
+
 import sectionStyles from "@/styles/section.module.css"
 import "../styles/globals.css"
-import FourthLayout from "@/components/pages/fourthLayout"
-import FifthLayout from "@/components/pages/fifthLayout"
 
 export default function Home() {
 	const [, setActiveSection] = useState(0)
@@ -74,7 +77,7 @@ export default function Home() {
 			</div>
 			<div
 				ref={(el) => {
-					if (el) sectionsRef.current[0] = el
+					if (el) sectionsRef.current[4] = el
 				}}
 				className={`${sectionStyles.section}`}
 			>

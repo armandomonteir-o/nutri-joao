@@ -1,8 +1,9 @@
 import { fetchRatingsFromGoogleForm } from "@/services/googleSheetsService"
 import { NextResponse } from "next/server"
 import { headers } from "next/headers"
+import { RatingsData } from "@/services/googleSheetsService"
 
-export async function GET() {
+export async function GET(): Promise<NextResponse<RatingsData>> {
 	try {
 		// Verifica o referrer de forma assíncrona
 		const headersList = await headers()
@@ -13,14 +14,20 @@ export async function GET() {
 			const allowedDomains = [
 				process.env.NEXT_PUBLIC_SITE_URL,
 				"https://www.consultasslimmind.com.br",
-			]
+			].filter(Boolean)
 
 			if (
 				!referer ||
-				!allowedDomains.some((domain) => referer.startsWith(domain))
+				!allowedDomains.some((domain) =>
+					referer.startsWith(domain as string)
+				)
 			) {
 				return NextResponse.json(
-					{ error: "Acesso não autorizado" },
+					{
+						error: "Acesso não autorizado",
+						averageRating: 0,
+						totalReviews: 0,
+					},
 					{ status: 403 }
 				)
 			}
@@ -41,27 +48,27 @@ export async function GET() {
 			},
 		})
 	} catch (error) {
-		console.error("Erro detalhado na API de avaliações:", {
-			message: error.message,
-			stack: error.stack,
-			response: error.response?.data,
+		const errorMessage =
+			error instanceof Error
+				? error.message
+				: "Um erro inesperado ocorreu."
+
+		console.error("Erro fatal na API de avaliações:", {
+			message: errorMessage,
+			stack: error instanceof Error ? error.stack : undefined,
 		})
 
 		return NextResponse.json(
 			{
 				error: "Falha ao buscar as avaliações",
-				details: error.message,
+				details: errorMessage,
+				averageRating: 0,
+				totalReviews: 0,
 			},
 			{
 				status: 500,
 				headers: {
 					"Cache-Control": "no-store",
-					"Content-Security-Policy":
-						"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';",
-					"X-Content-Type-Options": "nosniff",
-					"X-Frame-Options": "DENY",
-					"X-XSS-Protection": "1; mode=block",
-					"Referrer-Policy": "strict-origin-when-cross-origin",
 				},
 			}
 		)

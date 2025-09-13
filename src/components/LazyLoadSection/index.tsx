@@ -6,8 +6,6 @@ interface LazyLoadSectionProps {
 	className?: string
 }
 
-// Este componente age como um "portão". Ele só renderiza seus filhos
-// quando ele mesmo entra na tela.
 export default function LazyLoadSection({
 	children,
 	className = "",
@@ -41,8 +39,6 @@ export default function LazyLoadSection({
 		}
 	}, [])
 
-	// A div precisa ter uma altura mínima para que o IntersectionObserver funcione!
-	// A classe `.section` já define isso para nós.
 	return (
 		<div ref={ref} className={className}>
 			{isIntersecting ? children : null}

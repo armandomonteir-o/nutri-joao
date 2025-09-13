@@ -1,21 +1,28 @@
-"use client"
 import { useEffect, useState } from "react"
-import AliceCarousel from "react-alice-carousel"
-import "react-alice-carousel/lib/alice-carousel.css"
+import dynamic from "next/dynamic"
 import Image from "next/image"
 import styles from "@/components/pages/fourthLayout/fourthLayout.module.css"
 import { feedback } from "@/constants/feedbacks"
 import "react-alice-carousel/lib/alice-carousel.css"
 import RatingAverage from "@/components/RatingAverage"
 
+const AliceCarousel = dynamic(() => import("react-alice-carousel"), {
+	ssr: false,
+	loading: () => (
+		<div className={styles.loadingCarousel}>
+			Carregando depoimentos...
+		</div>
+	),
+})
+
 export default function FourthLayout() {
-	const [isMounted, setIsMounted] = useState(false)
 	const [isTouch, setIsTouch] = useState(false)
 
 	useEffect(() => {
-		setIsMounted(true)
-		// Verifica se é um dispositivo touch quando o componente é montado no cliente
-		setIsTouch(window.matchMedia('(max-width: 1366px) and (pointer: coarse)').matches)
+		setIsTouch(
+			window.matchMedia("(max-width: 1366px) and (pointer: coarse)")
+				.matches
+		)
 	}, [])
 
 	const carouselItems = feedback.map((item, index) => (
@@ -71,26 +78,20 @@ export default function FourthLayout() {
 				</p>
 			</div>
 			<div className={styles.carouselWrapper}>
-				{isMounted ? (
-					<AliceCarousel
-						mouseTracking
-						items={carouselItems}
-						responsive={responsive}
-						controlsStrategy="alternate"
-						disableDotsControls
-						touchTracking={true}
-						touchMoveDefaultEvents={false}
-						disableButtonsControls={isTouch}
-						infinite
-						autoPlay
-						autoPlayInterval={4000}
-						animationDuration={800}
-					/>
-				) : (
-					<div className={styles.loadingCarousel}>
-						Carregando depoimentos...
-					</div>
-				)}
+				<AliceCarousel
+					mouseTracking
+					items={carouselItems}
+					responsive={responsive}
+					controlsStrategy="alternate"
+					disableDotsControls
+					touchTracking={true}
+					touchMoveDefaultEvents={false}
+					disableButtonsControls={isTouch}
+					infinite
+					autoPlay
+					autoPlayInterval={4000}
+					animationDuration={800}
+				/>
 			</div>
 		</div>
 	)

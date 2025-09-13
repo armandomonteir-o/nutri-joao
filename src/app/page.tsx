@@ -1,7 +1,8 @@
 "use client"
-import { useEffect, useState, useRef } from "react"
+import { useRef } from "react"
 import dynamic from "next/dynamic"
 import InitialLayout from "@/components/pages/initialLayout"
+import LazyLoadSection from "@/components/LazyLoadSection"
 
 const SecondLayout = dynamic(() => import("@/components/pages/secondLayout"))
 const ThirdLayout = dynamic(() => import("@/components/pages/thirdLayout"))
@@ -12,33 +13,10 @@ import sectionStyles from "@/styles/section.module.css"
 import "../styles/globals.css"
 
 export default function Home() {
-	const [, setActiveSection] = useState(0)
 	const sectionsRef = useRef<HTMLDivElement[]>([])
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const index = sectionsRef.current.indexOf(
-							entry.target as HTMLDivElement
-						)
-						setActiveSection(index)
-					}
-				})
-			},
-			{ threshold: 0.5 }
-		)
-
-		sectionsRef.current.forEach((section: HTMLDivElement) =>
-			observer.observe(section)
-		)
-		return () => observer.disconnect()
-	}, [])
 
 	return (
 		<main>
-			{/* InitialLayout */}
 			<div
 				ref={(el) => {
 					if (el) sectionsRef.current[0] = el
@@ -48,41 +26,27 @@ export default function Home() {
 				<InitialLayout />
 			</div>
 
-			{/* SecondLayout */}
-			<div
-				ref={(el) => {
-					if (el) sectionsRef.current[1] = el
-				}}
+			<LazyLoadSection
 				className={`${sectionStyles.section} ${sectionStyles["section--inverted"]}`}
 			>
 				<SecondLayout />
-			</div>
-			{/* ThirdLayout */}
-			<div
-				ref={(el) => {
-					if (el) sectionsRef.current[2] = el
-				}}
+			</LazyLoadSection>
+
+			<LazyLoadSection
 				className={`${sectionStyles.section} ${sectionStyles["third-layout-section"]}`}
 			>
 				<ThirdLayout />
-			</div>
-			{/* FourthLayout */}
-			<div
-				ref={(el) => {
-					if (el) sectionsRef.current[3] = el
-				}}
+			</LazyLoadSection>
+
+			<LazyLoadSection
 				className={`${sectionStyles.section} ${sectionStyles["section--inverted"]}`}
 			>
 				<FourthLayout />
-			</div>
-			<div
-				ref={(el) => {
-					if (el) sectionsRef.current[4] = el
-				}}
-				className={`${sectionStyles.section}`}
-			>
+			</LazyLoadSection>
+
+			<LazyLoadSection className={`${sectionStyles.section}`}>
 				<FifthLayout />
-			</div>
+			</LazyLoadSection>
 		</main>
 	)
 }

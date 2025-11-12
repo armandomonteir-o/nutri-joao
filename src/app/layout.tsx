@@ -1,4 +1,3 @@
-import type { Metadata } from "next"
 import { Geist, Geist_Mono, Anton } from "next/font/google"
 import "../styles/globals.css"
 
@@ -11,12 +10,6 @@ const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
 })
-
-export const metadata: Metadata = {
-	title: "Consultoria Nutricional SlimMind",
-	description:
-		"Alcance seus objetivos de saúde com a Consultoria Nutricional SlimMind em Angra dos Reis. Planos personalizados para emagrecimento e bem-estar. Agende sua consulta!",
-}
 
 const anton = Anton({
 	subsets: ["latin"],

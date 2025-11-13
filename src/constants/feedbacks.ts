@@ -1,17 +1,11 @@
-// Remova os imports das imagens, pois elas virão da pasta public
-// import avatarGuilherme from "@/images/avatarGuilherme.webp"
-// import avatarSusana from "@/images/avatarSusana.webp"
-// import avatarJampa from "@/images/avatarJampa.png"
-
 interface feedback {
 	name: string
 	role: string
 	text: string
-	avatar: string // Alterado de StaticImageData para string
+	avatar: string
 }
 
 export const feedback: feedback[] = [
-	// Adiciona o tipo ao array para checagem
 	{
 		avatar: "/images/avatarArmando.webp",
 		name: "Armando Monteiro",

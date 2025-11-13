@@ -21,7 +21,6 @@ export async function fetchRatingsFromGoogleForm(): Promise<RatingsData> {
 
 	if (!process.env.GOOGLE_SPREADSHEET_ID || !process.env.GOOGLE_API_KEY) {
 		if (isProd) {
-			// Em produção, isso é um erro real de configuração.
 			console.error(
 				"Configuração de ambiente do Google Sheets incompleta."
 			)
@@ -31,7 +30,7 @@ export async function fetchRatingsFromGoogleForm(): Promise<RatingsData> {
 				totalReviews: 0,
 			}
 		}
-		// fallback.
+
 		console.warn(
 			"Variáveis de ambiente do Google Sheets não configuradas, usando dados mock."
 		)
@@ -53,7 +52,7 @@ export async function fetchRatingsFromGoogleForm(): Promise<RatingsData> {
 	try {
 		const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID
 		const API_KEY = process.env.GOOGLE_API_KEY
-		const RANGE = "B2:G" // Colunas B até G (6 avaliações numéricas)
+		const RANGE = "B2:G"
 
 		const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`
 

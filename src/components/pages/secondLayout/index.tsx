@@ -34,7 +34,6 @@ export default function SecondLayout() {
 		return () => observer.disconnect()
 	}, [])
 
-	// Encontra as mensagens específicas pelo ID
 	const conhecaMaisMsg = contactMessages.find(
 		(msg) => msg.id === "conheca-mais"
 	)?.message
@@ -42,7 +41,6 @@ export default function SecondLayout() {
 		(msg) => msg.id === "entre-em-contato"
 	)?.message
 
-	// Função para abrir o link do WhatsApp em nova aba
 	const openWhatsApp = (message?: string) => {
 		if (!message) {
 			console.error("Mensagem do WhatsApp não encontrada!")
@@ -64,16 +62,17 @@ export default function SecondLayout() {
 					<div className={styles.contentWrapper}>
 						<p>
 							Meu nome é João Paulo, sou nutricionista
-							formado pelo Centro Universitário de Barra
-							Mansa (UBM) e pós-graduando em Nutrição
-							Comportamental e Clínica pela Uniguaçu. Com
-							experiência na área, minha missão na nutrição
-							é transformar a relação das pessoas com a
-							alimentação, combatendo o terrorismo
-							nutricional que, muitas vezes, contribui para
-							o desenvolvimento de transtornos alimentares
-							e prejudica a relação com a comida. Acredito
-							em uma abordagem que respeita as
+							(CRN: 24102303) formado pelo Centro
+							Universitário de Barra Mansa (UBM) e
+							pós-graduando em Nutrição Comportamental e
+							Clínica pela Uniguaçu. Com experiência na
+							área, minha missão na nutrição é transformar
+							a relação das pessoas com a alimentação,
+							combatendo o terrorismo nutricional que,
+							muitas vezes, contribui para o
+							desenvolvimento de transtornos alimentares e
+							prejudica a relação com a comida. Acredito em
+							uma abordagem que respeita as
 							individualidades. Se quiser saber mais sobre
 							mim e minha metodologia de trabalho, clique
 							no botão abaixo.

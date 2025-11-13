@@ -3,8 +3,7 @@ interface ContactMessage {
 	message: string
 }
 
-// Número de telefone para o qual as mensagens serão enviadas
-const phoneNumber = "5524998416823" // Substitua pelo número correto, se necessário
+const phoneNumber = "5524998416823"
 
 export const contactMessages: ContactMessage[] = [
 	{
@@ -15,7 +14,6 @@ export const contactMessages: ContactMessage[] = [
 		id: "entre-em-contato",
 		message: `Olá, João Paulo! Acabei de ver o seu site e fiquei interessado em sua metodologia de trabalho. Gostaria de saber mais!`,
 	},
-	// Adicione outras mensagens gerais aqui, se necessário
 ]
 
 /**

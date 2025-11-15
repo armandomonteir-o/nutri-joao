@@ -1,22 +1,12 @@
 import axios from "axios"
-
-/**
- * Define a estrutura do objeto de retorno para os dados de avaliação.
- * Isso garante que qualquer parte do código que use esta função
- * saiba exatamente quais propriedades esperar.
- */
-export interface RatingsData {
-	averageRating: number
-	totalReviews: number
-	error?: string
-}
+import { RatingData } from "@/types/ratingData"
 
 /**
  * Serviço para acessar e processar dados de avaliações de um Google Form
  * através da API do Google Sheets
  */
 
-export async function fetchRatingsFromGoogleForm(): Promise<RatingsData> {
+export async function fetchRatingsFromGoogleForm(): Promise<RatingData> {
 	const isProd = process.env.NODE_ENV === "production"
 
 	if (!process.env.GOOGLE_SPREADSHEET_ID || !process.env.GOOGLE_API_KEY) {

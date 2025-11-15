@@ -2,19 +2,20 @@
 import { useEffect, useState } from "react"
 import styles from "./RatingAverage.module.css"
 import Image from "next/image"
+import { RatingData } from "@/types/ratingData"
 
-interface RatingData {
-	averageRating: number
-	totalReviews: number
-	error?: string
+interface RatingAverageProps {
+	initialData?: RatingData
 }
 
-export default function RatingAverage() {
-	const [ratingData, setRatingData] = useState<RatingData>({
-		averageRating: 0,
-		totalReviews: 0,
-	})
-	const [loading, setLoading] = useState(true)
+export default function RatingAverage({ initialData }: RatingAverageProps) {
+	const [ratingData, setRatingData] = useState<RatingData>(
+		initialData || {
+			averageRating: 0,
+			totalReviews: 0,
+		}
+	)
+	const [loading, setLoading] = useState(!initialData)
 	const [isClient, setIsClient] = useState(false)
 
 	useEffect(() => {
@@ -47,8 +48,10 @@ export default function RatingAverage() {
 			}
 		}
 
-		fetchRatings()
-	}, [])
+		if (!initialData) {
+			fetchRatings()
+		}
+	}, [initialData])
 
 	const renderStars = (rating: number) => {
 		const stars = []

@@ -5,6 +5,7 @@ import styles from "@/components/pages/fourthLayout/fourthLayout.module.css"
 import { feedback } from "@/constants/feedbacks"
 import "react-alice-carousel/lib/alice-carousel.css"
 import RatingAverage from "@/components/RatingAverage"
+import { RatingData } from "@/types/ratingData"
 
 const AliceCarousel = dynamic(() => import("react-alice-carousel"), {
 	ssr: false,
@@ -15,7 +16,11 @@ const AliceCarousel = dynamic(() => import("react-alice-carousel"), {
 	),
 })
 
-export default function FourthLayout() {
+export interface FourthLayoutProps {
+	initialRatingData?: RatingData
+}
+
+export default function FourthLayout({ initialRatingData }: FourthLayoutProps) {
 	const [isTouch, setIsTouch] = useState(false)
 
 	useEffect(() => {
@@ -55,7 +60,7 @@ export default function FourthLayout() {
 			<div className={styles.whyConsultWrapper}>
 				<h2>Por que consultar comigo?</h2>
 
-				<RatingAverage />
+				<RatingAverage initialData={initialRatingData} />
 
 				<p>
 					Você não precisa embarcar em &ldquo;mais uma

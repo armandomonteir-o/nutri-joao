@@ -9,6 +9,7 @@ export function generatePhysicianSchema(
 		"@id": `${siteUrl}#physician`,
 		name: "João Paulo Garcia",
 		identifier: "CRN: 24102303",
+		image: `${siteUrl}/images/joao-who-am-i.webp`,
 		description:
 			"Nutricionista em Angra dos Reis focado em nutrição comportamental, emagrecimento, transtornos alimentares e hipertrofia.",
 		url: siteUrl,

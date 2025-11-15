@@ -3,6 +3,7 @@ import { useRef } from "react"
 import dynamic from "next/dynamic"
 import InitialLayout from "@/components/pages/initialLayout"
 import LazyLoadSection from "@/components/LazyLoadSection"
+import { RatingData } from "@/types/ratingData"
 
 const SecondLayout = dynamic(() => import("@/components/pages/secondLayout"))
 const ThirdLayout = dynamic(() => import("@/components/pages/thirdLayout"))
@@ -11,8 +12,11 @@ const FifthLayout = dynamic(() => import("@/components/pages/fifthLayout"))
 
 import sectionStyles from "@/styles/section.module.css"
 
+interface PageWrapperProps {
+	initialRatingData?: RatingData
+}
 
-export default function PageWrapper() {
+export default function PageWrapper({ initialRatingData }: PageWrapperProps) {
 	const sectionsRef = useRef<HTMLDivElement[]>([])
 
 	return (
@@ -41,7 +45,7 @@ export default function PageWrapper() {
 			<LazyLoadSection
 				className={`${sectionStyles.section} ${sectionStyles["section--inverted"]}`}
 			>
-				<FourthLayout />
+				<FourthLayout initialRatingData={initialRatingData} />
 			</LazyLoadSection>
 
 			<LazyLoadSection className={`${sectionStyles.section}`}>

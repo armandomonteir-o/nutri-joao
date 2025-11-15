@@ -1,9 +1,9 @@
 import { fetchRatingsFromGoogleForm } from "@/services/googleSheetsService"
 import { NextResponse } from "next/server"
 import { headers } from "next/headers"
-import { RatingsData } from "@/services/googleSheetsService"
+import { RatingData } from "@/types/ratingData"
 
-export async function GET(): Promise<NextResponse<RatingsData>> {
+export async function GET(): Promise<NextResponse<RatingData>> {
 	try {
 		// Verifica o referrer de forma assíncrona
 		const headersList = await headers()
